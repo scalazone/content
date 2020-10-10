@@ -3,14 +3,44 @@
   "desc": "Fundamental topics for learning to program in Scala on the JVM",
   "lessons": [
     {
-      "id": "underscore",
-      "title": "Understanding the Underscore",
+      "id": "environment",
+      "title": "Our Programming Environment",
       "authorId": "jon-pretty",
-      "duration": 5
+      "duration": 12
+    },
+    {
+      "id": "helloworld",
+      "title": "Our First Program",
+      "authorId": "jon-pretty",
+      "duration": 12
+    },
+    {
+      "id": "code",
+      "title": "Working with Code",
+      "authorId": "jon-pretty",
+      "duration": 12
+    },
+    {
+      "id": "definitions",
+      "title": "Definitions",
+      "authorId": "jon-pretty",
+      "duration": 15
     },
     {
       "id": "scopes",
       "title": "Lexical Scoping",
+      "authorId": "jon-pretty",
+      "duration": 9
+    },
+    {
+      "id": "reftrans",
+      "title": "Referential Transparency",
+      "authorId": "jon-pretty",
+      "duration": 5
+    },
+    {
+      "id": "underscore",
+      "title": "Understanding the Underscore",
       "authorId": "jon-pretty",
       "duration": 5
     },

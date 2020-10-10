@@ -14,10 +14,10 @@ enum Color:
 ```
 
 If our scrutinee is an `Rgb` value, we can match against a pattern which, at the same time as matching, extracts
-the `red`, `green` and `blue` components from the value. Similarly, for a `Cmyk` value.
+the `red`, `green` and `blue` components from the value. Similarly, for a `Cmyk` value, as the next case shows.
 
 Here is a simple implementation of a method which converts a `Color` value into a monochrome (`Black` or
-`White`) value:
+`White`) value, whether it is an `Rgb` or a `Cmyk` instance:
 
 ```scala
 enum Mono:
@@ -31,15 +31,18 @@ def monochrome(color: Color): Mono =
       if key > 0.5 then Black else White
 ```
 
-Our first case matches on a general `Rgb` value, which we write, not as a single value, but in the same way we
-would construct a new instance of the enum value `Rgb`. But instead of putting known `red`, `green` and `blue`
-parameters _into_ an `Rgb` constructor, we are going to extract them _out of_ the enum value. And those values,
-called `red`, `green` and `blue` are newly available to use on the right-hand side of the case clause, set to
-whichever values the `Rgb` instance was initialized with.
+Our first case matches on a general `Rgb` value, which we write within the pattern, not as a single value, but
+in the same way we would if we were constructing a new instance of the enum value `Rgb`. But instead of putting
+known `red`, `green` and `blue` parameters _into_ an `Rgb` constructor, we are going to extract them _out of_
+the enum value. And those values, called `red`, `green` and `blue` are newly available to use on the right-hand
+side of the case clause, set to whichever values the `Rgb` instance was initialized with.
+
+As the name has always suggested, it's like checking whether the scrutinee matches a pattern which looks like
+`Rgb(red, green, blue)`.
 
 So while pattern matching against a single value would perform an _equality check_ between that value and the
 scrutinee, a structural match will check that the scrutinee has the right structure—in this example, checking
-that it is an `Rgb` instance of the `Color` type.
+that it is an `Rgb` instance of the `Color` type. If it is, then it will always have the desired structure.
 
 `case Rgb(red, green, blue)` is a simple example of a pattern _destructuring_ the scrutinee into its component
 parts, `red`, `green` and `blue`. We can choose any name for the three parameters, so `case Rgb(r, g, b)` would
@@ -56,9 +59,9 @@ case class Point(x: Double, y: Double)
 case class Circle(position: Point, radius: Double, color: Color)
 ```
 
-Much like matching on an instance of `Rgb`, we could match on an instance of `Circle`, in a method which finds
-the *x*-coordinate of the furthest left extent of the circle, which will be one _radius_ to the left of the
-center of the circle.
+Much as we can match on an instance of `Rgb`, we can match on an instance of `Circle`. Here is an example of a
+method which finds the *x*-coordinate of the furthest left extent of the circle, which will be one _radius_ to
+the left of the center of the circle.
 
 ```scala
 def leftEdge(circle: Circle): Double =
@@ -86,11 +89,9 @@ Here is the rewritten method:
 ```scala
 def leftEdge(circle: Circle): Double =
   circle match
-    case Circle(Point(x, _), r, _) => x - r
+    case Circle(Point(x, _), radius, _) =>
+      x - radius
 ```
-
-We took the opportunity to rename `radius` to `r`, since `r` is no longer used for the red component of the
-RGB color. It would have been an error if we had attempted to bind both parameters to the same identifier, `r`.
 
 Sometimes, in an expression like the example above, we would like to both destructure a pattern, _and_ bind it
 to an identifier. Imagine that we wanted to resize all the circles whose centers lie exactly on the *x*-axis
@@ -113,8 +114,8 @@ against the next case.
 We match on circles whose centres have either their *x*- or *y*-coordinates equal to `0` and construct new
 circles with the same color, but a new radius of `1`. But this code also constructs new instances of `Point`s
 even though the `Point` instances we matched upon do not change, even though the `Color` instances (`c`) are
-reused: the value we extract from the `Circle` is exactly the same object we use in the construction of the new
-`Circle` on the right-hand side of the case matches.
+reused: the `c` value we extract from the `Circle` is exactly the same object we use in the construction of the
+new `Circle` on the right-hand side of the case matches.
 
 As the `center` value for each new circle is left unchanged, we would prefer to reuse the same value, without
 constructing a new `Point` instance, and thankfully, we can pattern match on a scrutinee's structure at the
@@ -149,54 +150,3 @@ parts we care about and ignoring those we don't. And it employs a readable synta
 construction of the values we want to match against.
 
 ?---?
-# Choose the integer value which gets returned from the call to `retrieve`, below
-```scala
-enum Node:
-  case Duo(a: Node, b: Node)
-  case Value(i: Int)
-
-import Node._
-
-def retrieve(duo: Duo): Int = duo match
-  case Duo(Duo(a1, a2), Value(3)) =>
-    a1
-  case Duo(Duo(a1, a2), Duo(b1, b2)) =>
-    b1
-  case Duo(left: Duo, right) =>
-    retrieve(left)
-  case node =>
-    7
-
-retrieve(Duo(Duo(3, 4), Duo(5, 6)))
-```
-- [ ] 3
-- [ ] 4
-- [X] 5
-- [ ] 7
-
-# Tick all of the statements that are true about the following code:
-```scala
-enum Country:
-  case Fr, De, Uk, Es, It
-
-case class Address(street: String, city: String, postalCode: String, country: Country)
-case class Label(addressees: List[String], address: Address)
-
-enum Entity:
-  case Person(name: String, address: Address)
-  case Company(name: String, director: Person, address: Address)
-
-import Country._, Entity._
-
-def envelope(entity: Entity): Label = entity match
-  case Company(name, director, address@Address(street, "Paris", postcode, Fr)) =>
-    Label(List(director.name, "Director", name), address)
-  case Person(name, address) =>
-    Label(List(name), address)
-```
- * [X] we could replace `street` with an underscore without changing the behavior of `envelope`
- * [ ] if `entity` is a `Company`, the pattern will _always_ check for equality between the `country` parameter
-       and the value `Fr`
- * [X] it is possible to find an entity which does not match any of the cases in the match
- * [X] one use of the identifier `director` is shadowing another identifier with the same name
- 

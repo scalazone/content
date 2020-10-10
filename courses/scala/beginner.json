@@ -4,7 +4,7 @@
   "ranges": [
     {
       "topicId": "foundations",
-      "lessonStart": "underscore",
+      "lessonStart": "environment",
       "lessonEnd": "hashing"
     },
     {
@@ -19,7 +19,7 @@
     },
     {
       "topicId": "patterns",
-      "lessonStart": "simple",
+      "lessonStart": "basics",
       "lessonEnd": "exhaustivity"
     },
     {

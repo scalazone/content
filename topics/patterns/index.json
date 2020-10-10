@@ -22,12 +22,6 @@
       "duration": 15
     },
     {
-      "id": "types",
-      "title": "Matching by Type",
-      "authorId": "jon-pretty",
-      "duration": 13
-    },
-    {
       "id": "collections",
       "title": "Matching on Collections",
       "authorId": "jon-pretty",
@@ -44,6 +38,12 @@
       "title": "Erasure",
       "authorId": "jon-pretty",
       "duration": 10
+    },
+    {
+      "id": "types",
+      "title": "Matching by Type",
+      "authorId": "jon-pretty",
+      "duration": 13
     },
     {
       "id": "extractors",
