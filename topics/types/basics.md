@@ -7,7 +7,7 @@ run code which the compiler can prove is inconsistent.
 If, for example, we were to create a value which was a string of text, and then try to subtract five from it,
 the Scala compiler would rightly identify that such code is not self-consistent; it's a compile error.
 ```scala
-val message = "Hello world"
+val message = "Hello, World!"
 val result = message - 5
 ```
 

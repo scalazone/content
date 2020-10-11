@@ -98,7 +98,7 @@ instances of `BasicLog` and `Log` will have. Some examples of these properties a
 
 The Scala compiler uses properties such as these to decide whether it is safe to execute code, such as,
 ```scala
-value.info("Hello World")
+value.info("Hello, World!")
 ```
 
 If `value` is known to conform to the type `Log`, then this is provably a safe operation, because the `Log` type

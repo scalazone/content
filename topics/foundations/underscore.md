@@ -103,7 +103,7 @@ var x: String = _
 
 This will create a variable, `x`, which we can assign a value to, for example,
 ```scala
-x = "Hello world!"
+x = "Hello, World!"
 ```
 but whose initial value is not a `String`. This will, in fact, initialize the value to `null`, which we normally
 try to avoid, so it's often better to redesign our software to avoid the need for our field to exist without

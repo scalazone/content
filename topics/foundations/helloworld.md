@@ -1,6 +1,6 @@
 # A first program
 
-It is a tradition to start programming by writing a program called "Hello World" which does nothing more than
+It is a tradition to start programming by writing a program called "Hello, World!" which does nothing more than
 print the words,
 ```
 Hello, World!
@@ -28,7 +28,7 @@ context. Each will have an _entry point_: a method which will be executed first,
 subsequent execution will follow. This also implies that what happens _before_ the entry point will be opaque:
 we generally don't know (and shouldn't need to know) the exact details of _how_ the entry point is invoked.
 
-In the case of our "Hello World" example, that entry point is the method, `hello()`, which is a _main method_,
+In the case of our "Hello, World!" example, that entry point is the method, `hello()`, which is a _main method_,
 as indicated by the `@main` annotation. Prefixing a top-level method (a method defined outside a class, trait or
 object) with `@main` marks it as a program's entry point, and makes it accessible to invoked directly by the
 operating system with the `scala` command.

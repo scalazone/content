@@ -6,13 +6,19 @@
       "id": "environment",
       "title": "Our Programming Environment",
       "authorId": "jon-pretty",
-      "duration": 12
+      "duration": 23
     },
     {
       "id": "helloworld",
       "title": "Our First Program",
       "authorId": "jon-pretty",
       "duration": 12
+    },
+    {
+      "id": "expressions",
+      "title": "Expressions and Statements",
+      "authorId": "jon-pretty",
+      "duration": 14
     },
     {
       "id": "definitions",

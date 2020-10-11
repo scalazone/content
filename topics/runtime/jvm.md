@@ -67,11 +67,11 @@ code will go into one classfile or another.
 
 The `javap` tool, which is bundled with the Java Development Kit (JDK) allows us to inspect the bytecode for any
 class, in a format which is low-level, but still readable. Here is an example of the bytecode for a simple
-"Hello World" application written in Java:
+"Hello, World!" application written in Java:
 
 ```jvm
 0: getstatic      #2  // Field java/lang/System.out:Ljava/io/PrintStream;
-3: ldc            #3  // String Hello world
+3: ldc            #3  // String Hello, World!
 5: invokevirtual  #4  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
 8: return
 ```
@@ -86,12 +86,12 @@ references. At the end of each line, `javap` will lookup these references and sh
 This particular bytecode can be interpreted as follows:
  - `getstatic #2` puts a reference to the value specified at constant pool index 2, `java.lang.System.out` which
    is a `java.io.PrintStream` onto the stack
- - `ldc #3` loads the constant at index 3, `"Hello world"`, onto the stack
+ - `ldc #3` loads the constant at index 3, `"Hello, World!"`, onto the stack
  - `invokevirtual #4` calls the method `java.io.PrintStream#println(_: java.lang.String): Unit` (whose
    parameters are already on the stack)
  - `return` terminates the method
 
-This sequence of commands will cause the words `Hello world` to be printed as output when the method is invoked.
+This sequence of commands will cause the words `Hello, World!` to be printed as output when the method is invoked.
 
 And that invocation happens because when the JVM is launched, we must specify, as a parameter, the classfile to
 run. Every time we launch a new JVM, we must specify the name of a class as the "entry point" to an application.
@@ -101,7 +101,7 @@ method (with any name) and annotate it with the `@main` annotation, like this,
 package helloworld
 
 @main
-def run(): Unit = println("Hello world")
+def run(): Unit = println("Hello, World!")
 ```
 and Scala will generate a classfile called `helloworld/run.class`, corresponding to the class, `helloworld.run`,
 which will contain a `main` method which will be invoked when we launch a new JVM.

@@ -75,5 +75,5 @@ Very occasionally, we may want to define or use an identifier name which would b
 rules. This is permitted, with one compromise: it must be enclosed within backticks (`` ` ``). For example,
 - `` `#` ``
 - `` `object` ``
-- `` `Hello World!` ``
+- `` `Hello, World!` ``
 - `` `()` ``

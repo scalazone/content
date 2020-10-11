@@ -9,7 +9,7 @@ and values that will be run to produce values.
 Here are some example expressions:
 
 - `7 + 4`, which evaluates to the value `11`
-- `println("Hello World!")`, which prints `"Hello World!"` to the console when it is evaluated
+- `println("Hello, World!")`, which prints `"Hello, World!"` to the console when it is evaluated
 - `xs.init ++ ys.tail`, which evaluates to a list which is the "init" of `xs` (all but the last element) joined
    to the tail of `ys`
 - `list`, a reference to some value called `list`
