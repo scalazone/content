@@ -5,11 +5,11 @@
         "order": 0,
         "twitter": "https://twitter.com/propensive",
         "github": "https://github.com/propensive",
-        "desc": "Jon long-time Scala developer, delivering the first commercial and open-source projects in Scala in 2005. He is a former chair of the Scala Center Advisory Board and currently serves as advisor on the Virtus Lab Scala Steering Committee. Jon actively contributes to the Scala open-source ecosystem with Fury, Magnolia and Kaleidoscope, and organizes the annual Scala World conference. He contributes free online training through ScalaZONE and Functional Africa, and provides commercial advanced Scala training courses, specializing in the type system."
+        "desc": "Jon is a long-time Scala developer, delivering the first commercial and open-source projects in Scala in 2005. He is a former chair of the Scala Center Advisory Board and currently serves as advisor on the Virtus Lab Scala Steering Committee. Jon actively contributes to the Scala open-source ecosystem with Fury, Magnolia and Kaleidoscope, and organizes the annual Scala World conference. He contributes free online training through ScalaZONE and Functional Africa, and provides commercial advanced Scala training courses, specializing in the type system."
     },{
         "id": "szymon-rodziewicz",
         "name": "Szymon Rodziewicz",
-        "order": 2,
+        "order": 1,
         "github": "https://github.com/szymonrodziewicz",
         "desc": "test"
     }

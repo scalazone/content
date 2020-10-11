@@ -6,26 +6,20 @@
       "id": "jvm",
       "title": "The JVM",
       "authorId": "jon-pretty",
-      "duration": 10
+      "duration": 12
     },
     {
       "id": "memory",
       "title": "The Memory Model",
       "authorId": "jon-pretty",
-      "duration": 10
+      "duration": 14
 
     },
     {
       "id": "stack",
       "title": "The Execution Stack",
       "authorId": "jon-pretty",
-      "duration": 10
-    },
-    {
-      "id": "threads",
-      "title": "Threads",
-      "authorId": "jon-pretty",
-      "duration": 10
+      "duration": 15
     }
   ]
 }

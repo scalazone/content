@@ -103,9 +103,9 @@ properties of `B`.
 Or put simply, subtypes have more properties and fewer instances; supertypes have fewer properties and more
 instances.
 
-Category Theory is a profound and interesting topic, but is beyond the scope of this course, though it provides
-good context for understanding these relationships, and the duality between properties and instances in the
-context of types.
+Category Theory is a profound and interesting topic, but is beyond the scope of this course. However, it
+provides good context for understanding these relationships, and the duality between properties and instances in
+the context of types.
 
 For an experienced Scala developer, thinking about types should become second nature, but it remains a complex
 topic, and sometimes we need to reason about types more carefully. This is where thinking about types as sets of

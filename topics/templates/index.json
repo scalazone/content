@@ -20,18 +20,6 @@
       "title": "Traits",
       "authorId": "jon-pretty",
       "duration": 20
-    },
-    {
-      "id": "inheritance",
-      "title": "Inheritance",
-      "authorId": "jon-pretty",
-      "duration": 16
-    },
-    {
-      "id": "generics",
-      "title": "Generics",
-      "authorId": "szymon-rodziewicz",
-      "duration": 5
     }
   ]
 }

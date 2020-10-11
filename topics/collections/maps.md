@@ -1,4 +1,4 @@
-## Introduction
+# Maps
 
 Everyone who ever used a language dictionary or a phone book has come to contact with a real-life example of a data structure that is called a `Map` or a `Dictionary` in programming. In case of the `List` and `Vector`, the values are accessible by indices that are integers and intuitively represent the "location" of the elements. `Map` is a collection where these `indices` get a much broader nature. They can be of any type you want them to. These new `indicies` are called the `keys` - because you use them to access `values` in your `Map`. For example, you could create a `Map` with the phone numbers of your friends. To get a phone number out you would need to enter a name of your friend. So let's visualize this example with a table:
 

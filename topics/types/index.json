@@ -6,26 +6,20 @@
       "id": "basics",
       "title": "Basics",
       "authorId": "jon-pretty",
-      "duration": 8
-    },
-    {
-      "id": "casting",
-      "title": "Casting",
-      "authorId": "jon-pretty",
-      "duration": 8
-
+      "duration": 12
     },
     {
       "id": "subtyping",
       "title": "Subtyping",
       "authorId": "jon-pretty",
-      "duration": 10
+      "duration": 12
     },
     {
-      "id": "hierarchy",
-      "title": "The Type Hierarchy",
+      "id": "casting",
+      "title": "Casting",
       "authorId": "jon-pretty",
-      "duration": 10
+      "duration": 14
+
     }
   ]
 }

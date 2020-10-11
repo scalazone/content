@@ -6,26 +6,14 @@
         "id": "basics",
         "title": "Basics",
         "authorId": "jon-pretty",
-        "duration": 10
-        },
-        {
-        "id": "basics2",
-        "title": "Lists, Sets and computational complexity",
-        "authorId": "jon-pretty",
-        "duration": 10
-
-        },
-        {
-        "id": "collectionmethods",
-        "title": "Collection Methods",
-        "authorId": "szymon-rodziewicz",
         "duration": 20
         },
         {
-        "id": "maps",
-        "title": "Maps",
-        "authorId": "szymon-rodziewicz",
-        "duration": 10
+        "id": "lists",
+        "title": "Lists and Sets",
+        "authorId": "jon-pretty",
+        "duration": 17
+
         }
     ]
 }

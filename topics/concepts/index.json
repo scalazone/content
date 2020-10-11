@@ -1,18 +1,12 @@
 {
   "name": "Concepts",
-  "desc": "General programming concepts",
+  "desc": "Programming Concepts",
   "lessons": [
     {
-      "id": "reftrans",
-      "title": "Referential Transparency",
+      "id": "static",
+      "title": "Static vs Dynamic",
       "authorId": "jon-pretty",
-      "duration": 5
-    },
-    {
-      "id": "hashing",
-      "title": "Hash functions",
-      "authorId": "jon-pretty",
-      "duration": 5
+      "duration": 1
     }
   ]
 }

@@ -1,0 +1,2 @@
+# Static vs Dynamic
+

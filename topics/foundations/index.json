@@ -9,34 +9,22 @@
       "duration": 23
     },
     {
-      "id": "helloworld",
-      "title": "Our First Program",
-      "authorId": "jon-pretty",
-      "duration": 12
-    },
-    {
       "id": "expressions",
       "title": "Expressions and Statements",
       "authorId": "jon-pretty",
       "duration": 14
     },
     {
-      "id": "definitions",
+      "id": "helloworld",
+      "title": "Our First Program",
+      "authorId": "jon-pretty",
+      "duration": 12
+    },
+    {
+      "id": "defs",
       "title": "Definitions",
       "authorId": "jon-pretty",
       "duration": 15
-    },
-    {
-      "id": "scopes",
-      "title": "Lexical Scoping",
-      "authorId": "jon-pretty",
-      "duration": 9
-    },
-    {
-      "id": "underscore",
-      "title": "Understanding the Underscore",
-      "authorId": "jon-pretty",
-      "duration": 5
     }
   ]
 }
