@@ -1,0 +1,18 @@
+{
+  "name": "Concepts",
+  "desc": "General programming concepts",
+  "lessons": [
+    {
+      "id": "reftrans",
+      "title": "Referential Transparency",
+      "authorId": "jon-pretty",
+      "duration": 5
+    },
+    {
+      "id": "hashing",
+      "title": "Hash functions",
+      "authorId": "jon-pretty",
+      "duration": 5
+    }
+  ]
+}

@@ -7,7 +7,7 @@ Hello, World!
 ```
 on the screen, before exiting.
 
-In Scala, we can write this as follows:
+In Scala, we can create just such a program
 ```scala
 @main
 def hello() = println("Hello, World!")

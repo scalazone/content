@@ -15,12 +15,6 @@
       "duration": 12
     },
     {
-      "id": "code",
-      "title": "Working with Code",
-      "authorId": "jon-pretty",
-      "duration": 12
-    },
-    {
       "id": "definitions",
       "title": "Definitions",
       "authorId": "jon-pretty",
@@ -33,20 +27,8 @@
       "duration": 9
     },
     {
-      "id": "reftrans",
-      "title": "Referential Transparency",
-      "authorId": "jon-pretty",
-      "duration": 5
-    },
-    {
       "id": "underscore",
       "title": "Understanding the Underscore",
-      "authorId": "jon-pretty",
-      "duration": 5
-    },
-    {
-      "id": "hashing",
-      "title": "Hash functions",
       "authorId": "jon-pretty",
       "duration": 5
     }

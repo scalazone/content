@@ -5,7 +5,8 @@ and run Scala code.
 
 We will assume that we are going to start with a working computer running either _Linux_, _Mac OS X_ or
 _Windows_. The software development experience will be depend on the operating system we use, but once we have a
-working setup, our day-to-day development will look very similar, however our computer is configured.
+working setup, our day-to-day development will look very similar, whichever operating system we use, and however
+our computer is configured.
 
 The general process for developing Scala will typically involve the following:
 - creating or editing plain text files containing Scala source code, stored on the computer's hard disk
@@ -13,13 +14,16 @@ The general process for developing Scala will typically involve the following:
   runnable binary code
 - executing the binary code
 
-We will look at what needs to be done to get a computer ready to perform these everyday tasks.
+We are working hard to make the setup process easier for everyone with a one-step installation, but in the
+meantime, we will look at the steps that need to be done to get a computer ready to perform these everyday
+tasks.
 
 ## Editing files
 
-There are many applications which can be used to edit Scala source files, and while most users will choose an integrated development environment (IDE) such as [Visual Studio Code](https://code.visualstudio.com/) or
+There are many applications which can be used to edit Scala source files, and while most users will choose an
+integrated development environment (IDE) such as [Visual Studio Code](https://code.visualstudio.com/) or
 [IntelliJ IDEA](https://www.jetbrains.com/idea/), the only essential requirement is that the
-choice of editor should be able to edit text as _plain text_, and not a _rich text_ editor.
+choice of editor should be able to edit text as _plain text_, and is not a _rich text_ editor.
 
 This means that tools such as [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/) are
 perfectly suitable, as are the terminal-based editors [Vim](https://www.vim.org/) and
@@ -31,13 +35,14 @@ the text in some file formats—can confuse the compiler because it does not kno
 
 When we write a Scala source file, we should give it a name which ends with `.scala`, such as `defs.scala` or
 `Server.scala`. The name should be short, descriptive, and will commonly match the name of a class or object
-defined within it, though that is not a rule.
+defined within it, though that is not a rule, and it's often convenient to put several definitions in the same
+file.
 
-Source files are normally stored within a directory, sometimes organized into a hierarchy to make the files
-easier to manage. The directory structure for source files is a matter of personal preference, but 
+Source files are normally stored within a directory called `src`, sometimes organized into a hierarchy to make
+the files easier to manage. The directory structure for source files is a matter of personal preference.
 
 We recommend using Visual Studio Code with the
-[Metals](https://marketplace.visualstudio.com/items?itemName=scalameta.metals) and [Ferocity] extensions for
+[Metals](https://marketplace.visualstudio.com/items?itemName=scalameta.metals) and _Ferocity_ extensions for
 developing Scala.
 
 ## The Terminal
@@ -50,51 +55,55 @@ find src | grep scala
 ```
 and have them interpreted by the _command shell_, or just _shell_, which can start and stop applications, and
 control their input and output. This particular command will find all the files inside the folder called `src`
-which contain the string, `scala`.
+whose names contain the string, `scala`.
 
-There are a variety of different shells available, though the most common are _bash_, _zsh_ and _fish_.
+There are a variety of different shells available, though the most common are _bash_, _zsh_ and _fish_. These
+(and others) may offer a variety of different features, but all are capable of executing all of the commands we
+need to run in this course.
 
 A computer can run many terminals at the same time, each with its own shell representing an interactive—and
 independent—session between a human developer and the computer. A terminal is also commonly called the
-_console_, particularly from a perspective where it is known without ambiguity which terminal we refer to. For
+_console_, particularly from a perspective where it is known without ambiguity _which_ terminal we refer to. For
 example, when we run a Scala program inside a terminal, the terminal it runs in is usually called "the console",
 because it cannot easily (and does not make sense to) interact with any other terminals that might be running
 at the same time.
 
 The programs we write in this course will all be run within a terminal, initiated by entering a command at the
 command prompt, and started by the shell. Output from running the programs will be displayed in the terminal.
-From within our programs, we will sometimes talk about the console, meaning the terminal that we are running the
-program in.
 
-Every operating system provides terminal software which can be used for this purpose. Mac OS X provides a
-default terminal simply called _Terminal_, whereas Windows has a built-in application called _Command Prompt_,
-and offers a more modern terminal called _Windows Terminal_. Different distributions of Linux will come bundled
-with different terminals, for example _Ubuntu_ provides _Gnome Terminal_. Other Linux distributions may provide
-different terminals, any it may be necessary to check the documentation for a particular distribution of Linux,
-though most Linux users will have already encountered a terminal through everyday activities.
+Every operating system provides terminal software which can be used for this purpose. (Sometimes this will be
+called a _terminal emulator_, because it behaves like an old physical terminal which would have historically
+connected to a mainframe computer system, despite being just software _emulating_ hardware.)
+
+Mac OS X provides a default terminal simply called _Terminal_, whereas Windows has a built-in application called
+_Command Prompt_, and offers a more modern terminal called _Windows Terminal_. Different distributions of Linux
+will come bundled with different terminals, for example _Ubuntu_ provides _Gnome Terminal_. Other Linux
+distributions may provide different terminals, any it may be necessary to check the documentation for a
+particular distribution of Linux, though most Linux users will have already encountered a terminal through
+everyday activities.
 
 ## Compiling Scala 3
 
-The Scala compiler, `scalac`, is a program which can be run from the terminal that will convert source code into
-_bytecode_, which can be run. This conversion process is called _compilation_, and in addition to generating
-runnable bytecode, it will perform a number of checks on the source code to ensure that it makes sense, and is
-self-consistent.
+The Scala compiler, `scalac`, is a program which can be run (or _executed_) from the terminal to convert source
+code into _bytecode_, which can be run. This conversion process is called _compilation_, and in addition to
+generating runnable bytecode, it will perform a number of checks on the source code to ensure that it makes
+sense, and is self-consistent.
 
 We generally say that the compiler is checking the _correctness_ of the code, though this term can be slightly
 misleading: the concept of "correctness" is limited to what the compiler knows, and while it can check every
-usage against every definition, it cannot check that every definition correctly corresponds to a design brief or
-specification.
+usage against every definition, it cannot check that every definition correctly corresponds to the design brief
+or specification written in natural language that the compiler can't understand.
 
-The compilation step is, however, very good at finding many kinds of accidental mistakes that would be difficult
-for a human to notice, and presenting these in a convenient list that directs us to the location of the problem
-so we can fix it.
+The compilation step is, however, very good at finding many kinds of accidental mistake that would be difficult
+for a human to notice, and presenting these in a convenient list not only describing the problem, but directing
+us to its location within the source code so we can fix it.
 
-Not all programming languages require a compilation step: they allow source code to be run _directly_. This can
+Not all programming languages require a compilation step: many allow source code to be run _directly_. This can
 be a convenience in some cases, but code written in such languages invariably runs more slowly (which may not be
 a serious problem), and will not discover correctness errors until the incorrect code is run. This compilation
-phase is hugely advantageous to Scala developers because it can catch the majority of common programming errors
-before any code is even run. Conversely, that can give us a lot more confidence that when our code compiles
-successfully, it will also run successfully.
+step is hugely advantageous to Scala developers because it can catch the majority of common programming errors
+before any code is even run. Conversely, that can give us a lot more confidence that when our code _compiles_
+successfully, it will also _run_ successfully.
 
 We can compile some simple Scala 3 code by running `scalac`, and passing it paths to source files as arguments,
 like so:
@@ -118,9 +127,10 @@ scope of this tutorial, it is easy to get started compiling Scala with
 
 A build tool is a program, like `scalac`, but which performs a number of other high-level activities as well as
 compilation. These include:
-- orchestrating multi-step compilations, where some parts of the software should be compiled _after_ others
+- orchestrating multi-stage compilations, where some parts of the software should be compiled _after_ others
 - resolving and managing dependencies on other third-party libraries
-- incremental compilation, for compiling only the parts of the software which have changed
+- incremental compilation, for compiling only the parts of the source code which have changed since the previous
+  compilation
 - sharing and publishing software for so other developers can use it.
 
 While using the `scalac` program can remove a lot of uncertainty about compilation—it does _nothing_ more than
@@ -135,17 +145,17 @@ First, we will need a terminal.
 
 #### Mac OS X
 
-On Mac OS X, simply find and launch the program called _Terminal_.
+On Mac OS X, we simply need to find and launch the program called _Terminal_.
 
 #### Windows
 
 On Windows, we will need to install the _Windows Subsystem for Linux 2_ (WSL2). This provides an environment
 that will behave like a Linux computer, despite running under Windows. 
 
-Please follow the [installation instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10) on
-Microsoft's website to install WSL2. Make sure that WSL*2* is chosen and not WSL*1*, and when choosing which
-distribution of Linux to install, Scala can be used with any of the options available in the Windows Store, but
-_Ubuntu_ is a good choice. It is also recommended to install
+The [installation instructions](https://docs.microsoft.com/en-us/windows/wsl/install-win10) on Microsoft's
+website explain how to install WSL2. We need to make sure that WSL*2* is chosen and not WSL*1*. For the choice
+of which distribution of Linux to install, Scala can be used with any of the options available in the Windows
+Store, but _Ubuntu_ is a good choice. It is also recommended to install
 [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/get-started).
 
 If everything worked correctly, we should be able to launch a new WSL2 terminal, and enter commands at the
@@ -153,23 +163,22 @@ prompt. Entering the command,
 ```sh
 uname
 ```
-should simply print the output,
+should simply produce the output,
 ```sh
 Linux
 ```
 (even though we are using Windows!) so if the terminal reports an error that `uname` is not recognized, it
 probably means that the terminal that is running is a "PowerShell" or "Command Prompt" terminal, and not a
-y
 _WSL2_ terminal.
 
 #### Linux
 
 Different distributions of Linux, such as _Ubuntu_, _Fedora_, _Arch_ or _NixOS_ can come with completely
 different setups, with different software installed, and different graphical user interfaces. The terminal we
-use will depend on our distribution of Linux, though thankfully, many common Linux tasks require a terminal, so
-it should not be difficult to find.
+use will depend on our distribution of Linux, though thankfully, using the terminal is a common requirement for
+many tasks on Linuk, so it should not be difficult to find.
 
-Common Linux terminals are:
+A few common Linux terminals are:
 - `xterm`
 - URxvt
 - Alacritty
@@ -216,6 +225,7 @@ For help on using Fury, run: fury help
 
 ### Install Visual Studio Code and Metals
 
-Follow the instructions to install [Visual Studio Code](https://code.visualstudio.com/download), then install
-the [Metals](https://marketplace.visualstudio.com/items?itemName=scalameta.metals) plugin from the VS Code
-Marketplace.
+Follow the instructions to download and install [Visual Studio Code](https://code.visualstudio.com/download),
+then install the [Metals](https://marketplace.visualstudio.com/items?itemName=scalameta.metals) plugin from the
+VS Code Marketplace.
+
