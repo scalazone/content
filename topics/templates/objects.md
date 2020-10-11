@@ -20,6 +20,7 @@ its methods) by specifying the member's identifier, prefixed with the object's i
 character).
 
 Generally we talk of methods and fields being _inside_ an object, as if the object were a box containing them.
+This structure is known as _encapsulation_.
 
 For example,
 ```scala
@@ -113,3 +114,71 @@ evaluation happens until the method is invoked, so their position in the object'
 An object may also contain definitions of other objects, classes, traits and enums in its body, however these
 are just definitions, accessed through the object, and do not require any execution while the object is being
 instantiated, so, like `def`s, the order they appear in is insignificant.
+
+?---?
+
+Consider the following `object` definition within a hypothetical piece of software called "Onion",
+```scala
+object Info:
+  val version: Int = 7
+  val name: String = "Onion"
+  def description: String = s"$name, version $version"
+
+  println(s"Initializing $description")
+```
+and a `main` method which references it, twice:
+```scala
+@main
+def exec(): Unit =
+  Info // First reference
+  Info // Second reference
+```
+
+# When the runtime encounters the first reference to the `Info` object, it will,
+- [X] instantiate a new object in memory
+- [X] evaluate the value `version`
+- [X] evaluate the value `name`
+- [X] print the string `"Initializing Onion, version 7"`
+- [ ] print something else
+
+# The second time the runtime encounters a reference to the `Info` object, it will,
+- [ ] instantiate the object
+- [ ] evaluate the value `version`
+- [ ] evaluate the value `name`
+- [ ] print the string `"Initializing Onion, version 7"`
+- [ ] print something else
+
+# Moving the definition of `description` before the definition of `name` would,
+* [ ] cause compilation to fail, due to a forward-reference
+* [ ] result in an error at runtime, due to a forward-reference
+* [ ] cause an incorrect message to be printed
+* [ ] not change the behavior at all
+
+Now, consider the following definitions,
+```scala
+object Alpha:
+  val beta = Beta
+  def gamma = 3
+
+object Beta:
+  def alpha = Alpha
+  val delta = 4
+
+object Gamma
+  val epsilon = 5
+
+@main
+def exec(): Unit =
+  println(Alpha.beta.alpha.gamma)
+```
+
+Invoking the method `exec()` will cause several objects to be instantiated to evaluate it, before the number `3`
+is printed on the console.
+
+# Tick all the objects which are initialized when the `exec()` method is run:
+- [X] `Alpha`
+- [X] `Beta`
+- [X] `Alpha.beta`
+- [X] `Beta.delta`
+- [ ] `Gamma`
+- [ ] `Gamma.epsilon`
