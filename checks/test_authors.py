@@ -1,4 +1,4 @@
-from structure_loader import *
+from structure_loader import load_structure
 
 STRUCTURE = load_structure()
 

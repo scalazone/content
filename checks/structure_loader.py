@@ -61,7 +61,7 @@ def load_topics():
 def emptyIfNone(array):
   return [] if array == None else array
 
-def load_topic(topic_id: str):
+def load_topic(topic_id: str):git
   try:
     path = CONTENT_PATH + f"/topics/{topic_id}/index.json"
     topic_json = Path(path).read_text()

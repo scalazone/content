@@ -3,3 +3,5 @@ revision
 .metals
 .pytest_cache
 __pycache__
+.gitconfig
+.viminfo
