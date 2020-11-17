@@ -5,7 +5,9 @@
     {
       "id": "objects",
       "title": "Objects",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "video": "https://www.youtube.com/embed/72l8Kmwhlk4",
       "duration": 11,
       "prerequisites": [
@@ -24,14 +26,18 @@
     {
       "id": "classes",
       "title": "Classes",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 12,
       "video": "https://www.youtube.com/embed/LQtROAUWfYU"
     },
     {
       "id": "traits",
       "title": "Traits",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 20,
       "video": "https://www.youtube.com/embed/hrT33GtAP_A",
       "prerequisites": [
@@ -45,7 +51,9 @@
     {
       "id": "inheritance",
       "title": "Inheritance",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 11,
       "video": "https://www.youtube.com/embed/5uAkpxI-GUk",
       "prerequisites": [

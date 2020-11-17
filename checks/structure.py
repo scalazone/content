@@ -25,12 +25,12 @@ class Level:
   desc: str
   ranges: [TopicRange]
 
-@dataclass 
+@dataclass
 class Lesson:
   id: str
   topic_id: str
   title: str
-  author_id: str
+  author_ids: [str]
   duration: int
   prereqs: [str]
 
@@ -39,7 +39,7 @@ class LessonPrereq:
   lesson_id: str
   topic_id: str
 
-@dataclass 
+@dataclass
 class Topic:
   id: str
   name: str

@@ -5,28 +5,36 @@
     {
       "id": "introduction",
       "title": "Introduction",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "video": "https://www.youtube.com/embed/FvYS8r9Nt18",
       "duration": 9
     },
     {
       "id": "expressions",
       "title": "Expressions and Statements",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "video": "https://www.youtube.com/embed/fKCrvlBGbow",
       "duration": 14
     },
     {
       "id": "helloworld",
       "title": "Our First Program",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "video": "https://www.youtube.com/embed/KOz_53LlAMI",
       "duration": 12
     },
     {
       "id": "defs",
       "title": "Definitions",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "video": "https://www.youtube.com/embed/KLlAcPIUBKs",
       "duration": 15,
       "prerequisites": [
@@ -40,7 +48,9 @@
     {
       "id": "scopes",
       "title": "Scopes and Namespaces",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "video": "https://www.youtube.com/embed/IOnttJYoj_4",
       "duration": 9,
       "prerequisites": [

@@ -1,13 +1,15 @@
 {
-    "name": "For comprehensions",
-    "desc": "Working with for comprehensions",
-    "lessons": [
-        {
-        "id": "looping",
-        "title": "Looping",
-        "authorId": "szymon-rodziewicz",
-        "duration": 10,
-        "comingSoon": true
-        }
-    ]
+  "name": "For comprehensions",
+  "desc": "Working with for comprehensions",
+  "lessons": [
+    {
+      "id": "looping",
+      "title": "Looping",
+      "authorIds": [
+        "szymon-rodziewicz"
+      ],
+      "duration": 10,
+      "comingSoon": true
+    }
+  ]
 }

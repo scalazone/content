@@ -5,7 +5,9 @@
     {
       "id": "basics",
       "title": "Basics",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "video": "https://www.youtube.com/embed/G2oyqW8VyqM",
       "duration": 12,
       "prerequisites": [
@@ -24,7 +26,9 @@
     {
       "id": "subtyping",
       "title": "Subtyping",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 12,
       "video": "https://www.youtube.com/embed/wfTM_0sxqsA",
       "prerequisites": [
@@ -38,14 +42,18 @@
     {
       "id": "casting",
       "title": "Casting",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "video": "https://www.youtube.com/embed/Z_RUJ9ApUzI",
       "duration": 14
     },
     {
       "id": "hierarchy",
       "title": "The Type Hierarchy",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 14,
       "comingSoon": true
     }

@@ -5,14 +5,18 @@
     {
       "id": "static",
       "title": "Static vs Dynamic",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "video": "https://www.youtube.com/embed/eupgcKTO6AY",
       "duration": 10
     },
     {
       "id": "hashing",
       "title": "Hashing",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 16,
       "video": "https://www.youtube.com/embed/p1qh7HoXxOA",
       "prerequisites": [

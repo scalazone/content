@@ -5,7 +5,9 @@
     {
       "id": "jvm",
       "title": "The JVM",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 12,
       "video": "https://www.youtube.com/embed/6xe4bmJF-JM",
       "prerequisites": [
@@ -14,7 +16,9 @@
     {
       "id": "memory",
       "title": "The Memory Model",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 14,
       "video": "https://www.youtube.com/embed/kA4CtzUoCvU",
       "prerequisites": [
@@ -28,7 +32,9 @@
     {
       "id": "stack",
       "title": "The Execution Stack",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 15,
       "video": "https://www.youtube.com/embed/es68rZbORoc",
       "prerequisites": [
@@ -42,7 +48,9 @@
     {
       "id": "threads",
       "title": "Threads",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 12,
       "comingSoon": true
     }

@@ -5,7 +5,9 @@
     {
       "id": "enums",
       "title": "Enumerations",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 18,
       "comingSoon": true
     }

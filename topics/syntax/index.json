@@ -5,7 +5,9 @@
     {
       "id": "underscore",
       "title": "The Underscore",
-      "authorId": "jon-pretty",
+      "authorIds": [
+        "jon-pretty"
+      ],
       "duration": 17,
       "comingSoon": true
     }
