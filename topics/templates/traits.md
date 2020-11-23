@@ -240,7 +240,7 @@ trait Circle(radius: Double) extends Shape:
 object Dot extends Circle(1.0)
 ```
 
-Which two of the following solutions would avoid the compile error?
+Which of the following solutions would avoid the compile error?
 
 * [ ] add a method, `def center: Point = Origin`, to the body of `object Dot`
 * [ ] change the definition of `def center` in `trait Position` to `def center: Point = Origin`

@@ -46,6 +46,14 @@
       ]
     },
     {
+      "id": "strings",
+      "title": "Strings",
+      "authorId": "jon-pretty",
+      "duration": 22,
+      "prerequisites": [
+      ]
+    },
+    {
       "id": "scopes",
       "title": "Scopes and Namespaces",
       "authorIds": [
@@ -60,6 +68,15 @@
           "lessonId": "classes"
         }
       ]
+    },
+    {
+      "id": "primitives",
+      "title": "Primitives",
+      "authorId": "jon-pretty",
+      "duration": 22,
+      "prerequisites": [
+      ],
+      "comingSoon": true
     }
   ]
 }
