@@ -227,13 +227,13 @@ val str = """\\u0033"""
 
 then what is the value of `str.length`?
 
-* [ ] `1`
-* [ ] `2`
-* [ ] `3`
-* [ ] `5`
-* [ ] `6`
-* [X] `7`
-* [ ] `11`
+- [ ] `1`
+- [ ] `2`
+- [ ] `3`
+- [ ] `5`
+- [ ] `6`
+- [X] `7`
+- [ ] `11`
 
 # We will define a string containing a single newline character, thus,
 
@@ -244,10 +244,10 @@ val newline: String = "\n"
 Now, all of the following string expressions look like they _might_ contain a newline character. Select all of
 the expressions that actually do contain a newline somewhere in their resultant `String` value.
 
-- [X] `"\n"`
-- [X] `s"\n"`
-- [X] `s"""\n"""`
-- [ ] `"""\n"""`
-- [ ] `s"${"$newline"}"`
-- [ ] `"$$newline"`
-- [X] `s"${'\n'}"`
+* [X] `"\n"`
+* [X] `s"\n"`
+* [X] `s"""\n"""`
+* [ ] `"""\n"""`
+* [ ] `s"${"$newline"}"`
+* [ ] `"$$newline"`
+* [X] `s"${'\n'}"`
