@@ -100,7 +100,7 @@ literal, such as `'a'`.
 Sometimes having to escape these characters can lead to code becoming less readable, particularly when a string
 flows onto several lines.
 
-To help, Scala provides an alternative way of delimiting a string literal using three double-quotes (`"""') to
+To help, Scala provides an alternative way of delimiting a string literal using three double-quotes (`"""`) to
 start and end the string, so that it becomes possible to use _any_ characters (including newlines,
 double-quotes, and backslashes) inside the string, apart from the special sequence, `"""`, which will terminate
 the string literal.
