@@ -48,7 +48,7 @@
     {
       "id": "strings",
       "title": "Strings",
-      "authorId": "jon-pretty",
+      "authorIds": ["jon-pretty"],
       "duration": 22,
       "prerequisites": [
       ]
@@ -72,7 +72,7 @@
     {
       "id": "primitives",
       "title": "Primitives",
-      "authorId": "jon-pretty",
+      "authorIds": ["jon-pretty"],
       "duration": 22,
       "prerequisites": [
       ],

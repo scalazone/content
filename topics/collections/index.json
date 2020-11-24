@@ -5,9 +5,7 @@
     {
       "id": "basics",
       "title": "Basics",
-      "authorIds": [
-        "szymon-rodziewicz"
-      ],
+      "authorIds": ["szymon-rodziewicz", "jon-pretty"],
       "duration": 20,
       "video": "https://www.youtube.com/embed/X5KQUzoDujY",
       "prerequisites": [
@@ -21,17 +19,13 @@
     {
       "id": "lists",
       "title": "Lists and Sets",
-      "authorIds": [
-        "szymon-rodziewicz"
-      ],
+      "authorIds": ["szymon-rodziewicz", "jon-pretty"],
       "duration": 17
     },
     {
       "id": "methods",
       "title": "Collection Methods",
-      "authorIds": [
-        "jon-pretty"
-      ],
+      "authorIds": ["jon-pretty"],
       "duration": 16,
       "comingSoon": true
     }
