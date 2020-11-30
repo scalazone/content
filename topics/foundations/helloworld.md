@@ -122,7 +122,7 @@ incrementally!
 
 ?---?
 
-## The following program contains at least one mistake.
+# The following program contains at least one mistake.
 
 ```scala
 def factorial(x: Int) =
@@ -138,7 +138,7 @@ compiler is telling you!
 - [X] compilation fails because the method needs a return type
 - [ ] compilation fails because the program never terminates
 
-## Try to compile and run the following program
+# Try to compile and run the following program
 
 ```scala
 def go(x: Int): Int =

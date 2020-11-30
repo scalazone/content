@@ -122,7 +122,7 @@ users of the object.
 
 ?---?
 
-## Consider the following definitions:
+# Consider the following definitions:
 
 ```scala
 class JobRole(title: String, company: String):
@@ -139,14 +139,14 @@ What does the experession `pearCeo.description` evaluate to?
 - [ ] the expression does not compile
 - [ ] the expression throws an exception at runtime
 
-## In the same code, what does the experession `pearCeo.title` evaluate to?
+# In the same code, what does the experession `pearCeo.title` evaluate to?
 
 - [ ] `"CEO"`
 - [ ] `"CEO at Pear Inc"`
 - [X] the expression does not compile
 - [ ] the expression throws an exception at runtime
 
-## And what does the experession `JobRole("Analyst", "Quince Inc").title` evaluate to?
+# And what does the experession `JobRole("Analyst", "Quince Inc").title` evaluate to?
 
 - [ ] `"Analyst"`
 - [ ] `"Analyst at Quince Inc"`
@@ -154,7 +154,7 @@ What does the experession `pearCeo.description` evaluate to?
 - [X] the expression does not compile
 - [ ] the expression throws an exception at runtime
 
-## Now consider a class whose body contains a `println` statement,
+# Now consider a class whose body contains a `println` statement,
 
 ```scala
 class Info(msg: String):
@@ -181,7 +181,7 @@ The `run()` method will cause `[INFO] Hello, World!` to be printed a number of t
 - [X] four
 - [ ] five
 
-## How many different instances of the `Info` class are constructed when executing the `run()` method?
+# How many different instances of the `Info` class are constructed when executing the `run()` method?
 
 - [ ] one
 - [X] two

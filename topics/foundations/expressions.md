@@ -143,7 +143,7 @@ composable means of specifying computations or sequences of operations is key to
 
 ?---?
 
-## In the following short code sample, identify all the expressions:
+# In the following short code sample, identify all the expressions:
 
 ```scala
 val y = (3 + x)*2
@@ -159,7 +159,7 @@ println(y*5)
 * [X] `2`
 * [ ] `=`
 
-## Select all of the claims that are true about the following line of code:
+# Select all of the claims that are true about the following line of code:
 
 ```scala
 println("Hello, World!")

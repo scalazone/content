@@ -125,18 +125,18 @@ concurrent programming methods we employ, they will be built upon threads.
 
 ?---?
 
-## True or false? Every thread has its own stack and heap.
+# True or false? Every thread has its own stack and heap.
 - [ ] True
 - [X] False
 
-## True or false? Synchronization of threads can help avoid the risk of deadlock.
+# True or false? Synchronization of threads can help avoid the risk of deadlock.
 - [ ] True
 - [X] False
 
-## True or false? The number of threads that can run concurrently is limited by the number of CPU cores.
+# True or false? The number of threads that can run concurrently is limited by the number of CPU cores.
 - [ ] True
 - [X] False
 
-## True or false? Parallelism on modern multi-core CPUs is necessary to run concurrent code.
+# True or false? Parallelism on modern multi-core CPUs is necessary to run concurrent code.
 - [ ] True
 - [X] False

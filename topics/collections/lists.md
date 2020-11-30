@@ -180,7 +180,7 @@ Sets offer a rich assortment of other operations. The most useful of these are,
 
 ?---?
 
-## What is the value of `List(5, 4, 3, 2, 1).tail.tail(1)`?
+# What is the value of `List(5, 4, 3, 2, 1).tail.tail(1)`?
 
 - [ ] 1
 - [X] 2
@@ -188,7 +188,7 @@ Sets offer a rich assortment of other operations. The most useful of these are,
 - [ ] 4
 - [ ] 5
 
-## The `List`, `xs`, contains the integers `0` to `6`. If we print every element, accessed by its index, how many times must the `tail` field of a `List` be accessed?
+# The `List`, `xs`, contains the integers `0` to `6`. If we print every element, accessed by its index, how many times must the `tail` field of a `List` be accessed?
 
 ```scala
 val xs = List(0, 1, 2, 3, 4, 5, 6)
@@ -208,7 +208,7 @@ println(xs(6))
 - [X] 21
 - [ ] 36
 
-## How many elements does the set `zs` contain?
+# How many elements does the set `zs` contain?
 
 ```scala
 val ws = Set(1, 2, 3)

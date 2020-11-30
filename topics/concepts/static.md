@@ -105,27 +105,27 @@ facts we encode statically in types, and having the Scala compiler do the hard w
 
 ?---?
 
-## Scala is...
+# Scala is...
 
 - [X] a statically-typed language
 - [ ] a dynamically-typed language
 
-## True or false? Interpreted languages never have types.
+# True or false? Interpreted languages never have types.
 
 - [ ] True
 - [X] False
 
-## True or false? Unit tests may verify facts about a program that types cannot verify.
+# True or false? Unit tests may verify facts about a program that types cannot verify.
 
 - [X] True
 - [ ] False
 
-## True or false? Most programming languages are either designed to be interpreted or designed to be compiled.
+# True or false? Most programming languages are either designed to be interpreted or designed to be compiled.
 
 - [X] True
 - [ ] False
 
-## Select all the facts which can be known statically
+# Select all the facts which can be known statically
 
 * [X] the expression `5 + 4 > 3` is `true`
 * [ ] the expression `x/2 > 0` is `true` where `x` is an integer

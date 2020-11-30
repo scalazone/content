@@ -205,13 +205,13 @@ with them very safe and easy. Later lessons will explore these in more detail, b
 
 ?---?
 
-## In the expression `x +: y :+ z`, all the values are either `Int`s or `Vector[Int]`s. What type does the value `y` have?
+# In the expression `x +: y :+ z`, all the values are either `Int`s or `Vector[Int]`s. What type does the value `y` have?
 
 - [X] `Vector[Int]`
 - [ ] `Int`
 - [ ] It is not possible to work out without knowing more
 
-## The following code, constructs a new `Vector`, `zs`, from three elements of `ys`. What is its value?
+# The following code, constructs a new `Vector`, `zs`, from three elements of `ys`. What is its value?
 
 ```scala
 val xs = Vector(2, 4) ++ Vector(5, 7)
@@ -225,7 +225,7 @@ val zs = Vector(ys(2), ys(4), ys(7))
 - [ ] `Vector(5, 3, 1)`
 - [ ] `Vector(9, 3, 5)`
 
-## In the definitons below, `a`, `b`, `c` and `d` are all `Vector[Int]`s. Select all of the expressions which compile and evaluate to a value equal to `Vector(0, 1, 0, 1)`.
+# In the definitons below, `a`, `b`, `c` and `d` are all `Vector[Int]`s. Select all of the expressions which compile and evaluate to a value equal to `Vector(0, 1, 0, 1)`.
 
 ```scala
 val a = Vector(0, 1)

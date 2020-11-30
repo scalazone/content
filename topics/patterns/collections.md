@@ -133,7 +133,7 @@ against it.
 
 ?---?
 
-## Select the code that is equivalent to the pattern, `case In(Of(8, April), year) =>`:
+# Select the code that is equivalent to the pattern, `case In(Of(8, April), year) =>`:
 
 - [ ] `case 8 In April Of year =>`
 - [ ] `case 8 In (April Of year) =>`
@@ -141,7 +141,7 @@ against it.
 - [X] `case Of(8, April) In year =>`
 - [ ] `case In(8, Of(April, year)) =>`
 
-## The following code is equivalent to one case clause which matches against a scrutinee, `s`. Which case clause?
+# The following code is equivalent to one case clause which matches against a scrutinee, `s`. Which case clause?
 
 ```scala
 if ~.unapply(s) == Some(("abc", "xyz")) then f

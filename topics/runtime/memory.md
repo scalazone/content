@@ -146,7 +146,7 @@ This, however, is just an optimization, designed to minimize the impact of garba
 
 ?---?
 
-## Which of the following describe parts of the JVM's memory? (Note that some may be overlapping regions.)
+# Which of the following describe parts of the JVM's memory? (Note that some may be overlapping regions.)
 
 * [X] Tenured space
 * [X] Survivor space
@@ -156,14 +156,14 @@ This, however, is just an optimization, designed to minimize the impact of garba
 * [X] The Stack
 * [X] Eden space
 
-## Garbage collection of JVM objects happens:
+# Garbage collection of JVM objects happens:
 
 - [ ] When the objects are left unused in collections for a period of time
 - [X] When no references to those objects exist
 - [ ] After having spent a period of time in survior space
 - [ ] At regular intervals
 
-## Does the string `"Hello"` exist as an object on the heap at the point marked `Z`, in the following code?
+# Does the string `"Hello"` exist as an object on the heap at the point marked `Z`, in the following code?
 
 ```scala
 object Main:

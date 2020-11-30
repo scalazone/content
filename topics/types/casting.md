@@ -138,7 +138,7 @@ doing.
 
 ?---?
 
-## Consider the following code:
+# Consider the following code:
 
 ```scala
 val berlin: List[Any] = List("Berlin", 1237, 13.405, 52.52)
@@ -158,7 +158,7 @@ Select every value definition which would compile successfully:
 * [ ] `val north`
 * [X] `val city2`
 
-## Here is a similar example, which does compile successfully.
+# Here is a similar example, which does compile successfully.
 
 ```scala
 val chicago = List("Chicago", 1833, 41.8781, 87.6298)

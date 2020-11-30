@@ -118,7 +118,7 @@ we have an instance of that type to inspect. The cost of erasure is that pattern
 distributed widely throughout a program.
 
 ?---?
-## Which code correctly checks if `list` values are of a numeric type?
+# Which code correctly checks if `list` values are of a numeric type?
  - [ ] ```scala
  list.head match 
    case None                => "Empty!"

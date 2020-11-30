@@ -205,7 +205,7 @@ traits, and this somewhat defeats their purpose.
 
 ?---?
 
-## Given the following trait definitions,
+# Given the following trait definitions,
 
 ```scala
 trait Publication(title: String)
@@ -221,7 +221,7 @@ select every object definition which will compile without error.
 * [X] `object Middlemarch extends Novel("Middlemarch"), Publication("Middlemarch")`
 * [ ] `object Catch22 extends Novel("Catch-22"), Publication, Inventory(0)`
 
-## The following code will not compile:
+# The following code will not compile:
 
 ```scala
 val Origin = Point(0, 0)

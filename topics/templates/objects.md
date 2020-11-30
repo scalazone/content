@@ -126,7 +126,7 @@ instantiated, so, like `def`s, the order they appear in is insignificant.
 
 ?---?
 
-## Consider the following `object` definition within a hypothetical piece of software called _Onion_,
+# Consider the following `object` definition within a hypothetical piece of software called _Onion_,
 
 ```scala
 object Info:
@@ -152,7 +152,7 @@ When the runtime encounters the first reference to the `Info` object, it will,
 * [X] print the string `"Initializing Onion, version 7"`
 * [X] print the string `"Onion"`
 
-## When the runtime encounters the second reference to the `Info` object, it will,
+# When the runtime encounters the second reference to the `Info` object, it will,
 
 * [ ] instantiate the object
 * [ ] evaluate the value `version`
@@ -160,13 +160,13 @@ When the runtime encounters the first reference to the `Info` object, it will,
 * [ ] print the string `"Initializing Onion, version 7"`
 * [X] look up the `Info` object instantiated earlier
 
-## Moving the definition of `description` _before_ the definition of `name` would,
+# Moving the definition of `description` _before_ the definition of `name` would,
 - [ ] cause compilation to fail, due to a forward-reference
 - [ ] result in an error at runtime, due to a forward-reference
 - [ ] cause an incorrect message to be printed
 - [X] not change the behavior at all
 
-## Now, consider the following definitions,
+# Now, consider the following definitions,
 ```scala
 object Alpha:
   val beta = Beta

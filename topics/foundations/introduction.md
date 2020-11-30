@@ -91,8 +91,7 @@ So let's begin. Good luck, and enjoy the course!
 
 ?---?
 
-## Throughout the course, questions will appear at the bottom of each lesson, to test whether you have
-understood the concepts in the lesson.
+# Throughout the course, questions will appear at the bottom of each lesson, to test whether you have understood the concepts in the lesson.
 
 Some of these require you to select a single answer. So try this with an easy question now: choose the language
 you would like to learn.
@@ -104,7 +103,7 @@ you would like to learn.
 - [ ] Kotlin
 - [ ] C#
 
-## Other questions allow you to choose multiple answers.
+# Other questions allow you to choose multiple answers.
 
 These are usually harder because, in order to get the question right, you must consider each and every possible
 answer. Try this one now: select every programming language containing the letter `a` in its name.

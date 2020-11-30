@@ -157,7 +157,7 @@ process of a program can remain superficial, so long as we understand how to rea
 
 ?---?
 
-## Stack traces can reveal:
+# Stack traces can reveal:
   * [x] The type of exception that was thrown
   * [ ] The exact time that the exception was thrown
   * [ ] All values stored on the stack
@@ -166,7 +166,7 @@ process of a program can remain superficial, so long as we understand how to rea
   * [ ] The parameters to those methods
   * [x] The line numbers in the source files from which those methods were compiled
 
-## Have a look at the following stack trace:
+# Have a look at the following stack trace:
 
 ```
 Exception in thread "main" java.lang.Exception: there was an unfortunate failure

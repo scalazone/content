@@ -179,7 +179,7 @@ opaque at the use site.
 
 ?---?
 
-## In the following code, `Counter(0)` constructs a new a `Counter` instance, an object with an internal integer counter starting at `0`. Every time the `inc()` method is invoked on a `Counter` instance, it increments its inner counter by `1`. The `Counter`'s `value` method will return the counter value.
+# In the following code, `Counter(0)` constructs a new a `Counter` instance, an object with an internal integer counter starting at `0`. Every time the `inc()` method is invoked on a `Counter` instance, it increments its inner counter by `1`. The `Counter`'s `value` method will return the counter value.
 
 ```scala
 val counter = Counter(0)
@@ -209,7 +209,7 @@ What is the counter value printed at the end of the `run()` method?
 - [ ] 6
 - [ ] 7
 
-## The same code has been modified to swap some `def` and `val` declarations:
+# The same code has been modified to swap some `def` and `val` declarations:
 
 ```scala
 def counter = Counter(0)

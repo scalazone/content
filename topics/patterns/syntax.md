@@ -146,7 +146,7 @@ This simple machinery gives us some useful tools for writing more expressive pat
 
 ?---?
 
-## In the following code,
+# In the following code,
 
 ```scala
 val red = Color(1.0, 0.0, 0.0)
@@ -168,7 +168,7 @@ Choose which pattern will match the expression
 - [ ] Second
 - [X] Third
 
-## In the following code, three of the four case clauses contain compile errors:
+# In the following code, three of the four case clauses contain compile errors:
 
 ```scala
 val red = Color(1.0, 0.0, 0.0)

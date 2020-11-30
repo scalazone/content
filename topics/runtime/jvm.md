@@ -122,22 +122,22 @@ performance.
 
 ?---?
 
-## True or false? The Java Virtual Machine is an ordinary program the runs on a computer system.
+# True or false? The Java Virtual Machine is an ordinary program the runs on a computer system.
 - [X] True
 - [ ] False
 
-## True or false? All JVM instructions are one byte long (excluding parameters).
+# True or false? All JVM instructions are one byte long (excluding parameters).
 - [X] True
 - [ ] False
 
-## True or false? Java bytecode instructions map directly to Scala keywords.
+# True or false? Java bytecode instructions map directly to Scala keywords.
 - [ ] True
 - [X] False
 
-## True or false? A Java classfile contains only Java bytecode.
+# True or false? A Java classfile contains only Java bytecode.
 - [ ] True
 - [X] False
 
-## True or false? Compilation is the process by which Scala source code is converted into bytecode.
+# True or false? Compilation is the process by which Scala source code is converted into bytecode.
 - [X] True
 - [ ] False

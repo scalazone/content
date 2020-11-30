@@ -158,7 +158,7 @@ construction of the values we want to match against.
 
 ?---?
 
-## Consider this `area` method for calculating the area of certain geometric shapes:
+# Consider this `area` method for calculating the area of certain geometric shapes:
 
 ```scala
 geo match
