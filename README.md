@@ -166,7 +166,6 @@ To add two numbers ...
  * [ ] 7
  * [X] Four
 
-```
 ~~~
 
 ### Authors
