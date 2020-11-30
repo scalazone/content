@@ -29,7 +29,7 @@ def validate_question_section_content(md, content):
   unsnippified_content = remove_code_snippets(md, content)
   sanitized_content = sanitize(unsnippified_content)
   validate_question_indicators(md, sanitized_content)
-  question_contents = re.split(r"\n#", sanitized_content)
+  question_contents = re.split(r"\n#", "\n" + sanitized_content)
   if len(sanitized_content) > 1:
     for question_content in question_contents[1:]:
       validate_question_answers(md, question_content)
@@ -61,25 +61,38 @@ def validate_question_indicators(md, content):
 
 def validate_question_answers(md, question_content):
   question_content_lines = question_content.split("\n")
-  single_answer_option_lines = list(filter(lambda x: re.match(r"^- \[ ]", x), question_content_lines))
-  single_answer_option_checked_lines = list(filter(lambda x: re.match(r"^- \[[xX]]", x), question_content_lines))
-  multi_answer_option_lines = list(filter(lambda x: re.match(r"^\* \[ ]", x), question_content_lines))
-  multi_answer_option_checked_lines = list(filter(lambda x: re.match(r"^\* \[[xX]]", x), question_content_lines))
-  single_answer_option_checked_lines_count = len(single_answer_option_checked_lines)
-  multi_answer_option_checked_lines_count = len(multi_answer_option_checked_lines)
-  all_single_answer_option_lines_count = len(single_answer_option_lines) + single_answer_option_checked_lines_count
-  all_multi_answer_option_lines_count = len(multi_answer_option_lines) + multi_answer_option_checked_lines_count
+  single_answer_options = parse_single_answer_options(question_content_lines)
+  multi_answer_options = parse_multi_answer_options(question_content_lines)
 
-  if all_single_answer_option_lines_count > 0 and all_multi_answer_option_lines_count > 0:
+  if single_answer_options.all_count > 0 and multi_answer_options.all_count > 0:
     assert False, f"Found both single- and multi- answer options in the question, file '{md}'"
 
-  if all_single_answer_option_lines_count == 0 and all_multi_answer_option_lines_count == 0:
+  if single_answer_options.all_count == 0 and multi_answer_options.all_count == 0:
     assert False, f"Found no answer options in the question, file '{md}'"
 
-  if single_answer_option_checked_lines_count > 1:
+  if single_answer_options.checked_count > 1:
     assert False, f"Multiple answers checked in the single answer question, file '{md}'"
-  elif all_single_answer_option_lines_count > 0 and single_answer_option_checked_lines_count == 0:
+  elif single_answer_options.all_count > 0 and single_answer_options.checked_count == 0:
     assert False, f"No answer checked in the single answer question, file '{md}'"
 
-  if all_multi_answer_option_lines_count > 0 and multi_answer_option_checked_lines_count == 0:
+  if multi_answer_options.all_count > 0 and multi_answer_options.checked_count == 0:
     assert False, f"No answer checked in the multi answer question found, file '{md}'"
+
+
+def parse_single_answer_options(question_lines):
+  unchecked_options = list(filter(lambda x: re.match(r"^- \[ ]", x), question_lines))
+  checked_options = list(filter(lambda x: re.match(r"^- \[[xX]]", x), question_lines))
+  return AnswerOptions(unchecked_options, checked_options)
+
+
+def parse_multi_answer_options(question_lines):
+  unchecked_options = list(filter(lambda x: re.match(r"^\* \[ ]", x), question_lines))
+  checked_options = list(filter(lambda x: re.match(r"^\* \[[xX]]", x), question_lines))
+  return AnswerOptions(unchecked_options, checked_options)
+
+
+class AnswerOptions(object):
+  def __init__(self, unchecked, checked):
+    self.checked_count = len(checked)
+    self.unchecked_count = len(unchecked)
+    self.all_count = self.unchecked_count + self.checked_count
