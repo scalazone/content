@@ -6,6 +6,7 @@ CONTENT_DIR=$(pwd)
 
 cd checks
 pip3 install -U pytest
+pip3 install commonmark
 pip3 install dataclasses
 
 export CONTENT_DIR

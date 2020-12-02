@@ -1,23 +1,31 @@
 import glob
+import json
 import re
 
+import commonmark
 from envs import CONTENT_PATH
 from pathlib import Path
 
 CODE_SNIPPET_INDICATOR = "```"
 QUESTION_SECTION_INDICATOR = "?---?"
-topcis_root = CONTENT_PATH + "/topics"
+topics_root = CONTENT_PATH + "/topics"
 
 
 def test_lesson():
-  files = f"{topcis_root}/*/*.md"
+  files = f"{topics_root}/*/*.md"
   mds = glob.glob(files)
   for md in mds:
     try:
       lesson_text = Path(md).read_text()
-      question_section_index = lesson_text.find(QUESTION_SECTION_INDICATOR)
-      if question_section_index != -1:
-        question_section_content = lesson_text[question_section_index + len(QUESTION_SECTION_INDICATOR):]
+      ast = commonmark.Parser().parse(lesson_text)
+      json_object = json.loads(commonmark.dumpJSON(ast))
+      predicate = lambda o: any(
+        map(lambda x: x["literal"] == QUESTION_SECTION_INDICATOR, filter(lambda x: x["type"] == "text", o["children"])))
+      indices = [i for i, v in enumerate(json_object) if predicate(v)]
+      if len(indices) > 1:
+        assert False, f"Multiple question section indicators ('?---?') found in file '{md}'"
+      elif len(indices) == 1:
+        question_section_content = json_object[indices[0] + 1:]
         validate_question_section_content(md, question_section_content)
     except FileNotFoundError:
       assert False, f"Lesson file '{md}' not found"
@@ -25,44 +33,75 @@ def test_lesson():
       assert False, f"Lesson file '{md}' is malformed, cause: {repr(e)}"
 
 
-def validate_question_section_content(md, content):
-  unsnippified_content = remove_code_snippets(md, content)
-  sanitized_content = sanitize(unsnippified_content)
-  validate_question_indicators(md, sanitized_content)
-  question_contents = re.split(r"\n#", "\n" + sanitized_content)
-  if len(sanitized_content) > 1:
-    for question_content in question_contents[1:]:
-      validate_question_answers(md, question_content)
+def validate_question_section_content(md, content_objects):
+  content_objects = list(map(remove_code_blocks, content_objects))
+  content_objects = remove_empty_paragraphs(content_objects)
+  validate_question_indicators(md, content_objects)
+  question_answer_options_groups = derive_question_answer_options_groups(content_objects)
+  for group in question_answer_options_groups:
+    validate_question_answers(md, map(lambda i: content_objects[i], group))
 
 
-def remove_code_snippets(md, content):
-  code_snippet_indicator_indices = [m.start() for m in re.finditer(CODE_SNIPPET_INDICATOR, content)]
-  if len(code_snippet_indicator_indices) % 2 == 1:
-    assert False, f"Unmatched code snippet indicator ('```') in lesson file '{md}'"
-  begs = [0] + list(map(lambda x: x + len(CODE_SNIPPET_INDICATOR), code_snippet_indicator_indices[1::2]))
-  ends = code_snippet_indicator_indices[::2] + [len(content)]
-  content_ranges = list(zip(begs, ends))
-  unsnippified_content = "".join([content[a:b] for a, b in content_ranges])
-  return unsnippified_content
+def remove_code_blocks(content_object):
+  is_not_code_block = lambda v: v["type"] != "code_block"
+  return filter_object_recursively(content_object, is_not_code_block)
 
 
-def sanitize(unsnippified_content):
-  lines = unsnippified_content.split("\n")
-  no_empty_lines = filter(lambda x: not re.match(r"^\s*$", x), lines)
-  stripped = map(lambda x: x.strip(), no_empty_lines)
-  return "\n".join(stripped)
+def remove_empty_paragraphs(content_objects):
+  is_not_empty_node = lambda o: o["type"] != "paragraph" or (o["type"] == "paragraph" and o["children"])
+  result = []
+  for content_object in content_objects:
+    result.append(filter_object_recursively(content_object, is_not_empty_node))
+  return [r for r in result if is_not_empty_node(r)]
 
 
-def validate_question_indicators(md, content):
-  invalid_question_indicators = [m.start() for m in re.finditer(r"#{2,}", content)]
-  if invalid_question_indicators:
-    assert False, f"Invalid question indication (multiple '#') in lesson file '{md}'"
+def filter_object_recursively(content_object, pred):
+  if "children" in content_object.keys():
+    proceeded_children = list(map(lambda x: filter_object_recursively(x, pred), content_object["children"]))
+    content_object["children"] = [v for v in proceeded_children if pred(v)]
+  return content_object
 
 
-def validate_question_answers(md, question_content):
-  question_content_lines = question_content.split("\n")
-  single_answer_options = parse_single_answer_options(question_content_lines)
-  multi_answer_options = parse_multi_answer_options(question_content_lines)
+def validate_question_indicators(md, content_objects):
+  for content_object in content_objects:
+    if content_object["type"] == "heading":
+      if any(map(lambda x: x["type"] == "heading", content_object["children"])):
+        assert False, f"Invalid question indication (multiple '#') in lesson file '{md}'"
+
+
+def derive_question_answer_options_groups(content_objects):
+  def is_item_node(object):
+    return len([i for i, v in enumerate(object["children"]) if
+                "list_data" in v.keys() and v["list_data"]["type"] == "bullet"]) > 0
+
+  def is_heading_node(object):
+    return len([i for i, v in enumerate(object["children"]) if v["type"] == "heading"]) > 0
+
+  # most likely unnecessary
+  def contains_checkbox(object):
+    text = "".join(map(lambda x: x["literal"], filter(lambda x: x["type"] == "text", object["children"])))
+    return re.match(r"\[.]", text)
+
+  is_valid_item_node = lambda x: is_item_node(x) and contains_checkbox(x)
+  heading_indices = [i for i, v in enumerate(content_objects) if is_heading_node(v)]
+  headings_len = len(heading_indices)
+  answer_options_groups = []
+  for i in range(headings_len):
+    beg = heading_indices[i] + 1
+    end = heading_indices[i + 1] if i + 1 < headings_len else len(content_objects)
+    item_indices = [i + beg for i, v in enumerate(content_objects[beg:end]) if is_valid_item_node(v)]
+    answer_options_groups.append(item_indices)
+  return answer_options_groups
+
+
+def validate_question_answers(md, question_contents):
+  get_bullet_char = lambda x: \
+    list(map(lambda x: x["list_data"]["bullet_char"], filter(lambda x: x["type"] in ["item", "list"], x)))[0]
+  write_text = lambda x: (get_bullet_char(x["children"]),
+                          "".join(map(lambda x: x["literal"], filter(lambda x: x["type"] == "text", x["children"]))))
+  answer_options_texts = list(map(lambda x: " ".join(list(x)), map(write_text, question_contents)))
+  single_answer_options = parse_single_answer_options(answer_options_texts)
+  multi_answer_options = parse_multi_answer_options(answer_options_texts)
 
   if single_answer_options.all_count > 0 and multi_answer_options.all_count > 0:
     assert False, f"Found both single- and multi- answer options in the question, file '{md}'"
@@ -79,15 +118,15 @@ def validate_question_answers(md, question_content):
     assert False, f"No answer checked in the multi answer question found, file '{md}'"
 
 
-def parse_single_answer_options(question_lines):
-  unchecked_options = list(filter(lambda x: re.match(r"^- \[ ]", x), question_lines))
-  checked_options = list(filter(lambda x: re.match(r"^- \[[xX]]", x), question_lines))
+def parse_single_answer_options(answer_options_texts):
+  unchecked_options = list(filter(lambda x: re.match(r"^- \[ ]", x), answer_options_texts))
+  checked_options = list(filter(lambda x: re.match(r"^- \[[xX]]", x), answer_options_texts))
   return AnswerOptions(unchecked_options, checked_options)
 
 
-def parse_multi_answer_options(question_lines):
-  unchecked_options = list(filter(lambda x: re.match(r"^\* \[ ]", x), question_lines))
-  checked_options = list(filter(lambda x: re.match(r"^\* \[[xX]]", x), question_lines))
+def parse_multi_answer_options(answer_options_texts):
+  unchecked_options = list(filter(lambda x: re.match(r"^\* \[ ]", x), answer_options_texts))
+  checked_options = list(filter(lambda x: re.match(r"^\* \[[xX]]", x), answer_options_texts))
   return AnswerOptions(unchecked_options, checked_options)
 
 
