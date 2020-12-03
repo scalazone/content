@@ -24,9 +24,9 @@ used, for example, to recalculate the position of a rook on a chessboard.
 
 ## Generalized Branching
 
-Pattern matching provides a more general way of performing branching than an `if`/`then`/`else` construct,
-though a pattern match experession could be rewritten as an `if` expression. Here is the same `move` method,
-rewritten using `if`, `then` and `else`:
+Pattern matching provides a more general way of performing branching than an `if`/`then`/`else` construct, though a
+pattern match expression could be rewritten as an `if` expression. Here is the same `move` method, rewritten using `if`
+, `then` and `else`:
 
 ```scala
 def move(dir: Direction, n: Int, x: Int, y: Int): (Int, Int) =

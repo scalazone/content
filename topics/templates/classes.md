@@ -132,21 +132,21 @@ class JobRole(title: String, company: String):
 val pearCeo = JobRole("CEO", "Pear Inc")
 ```
 
-What does the experession `pearCeo.description` evaluate to?
+What does the expression `pearCeo.description` evaluate to?
 
 - [ ] `"CEO"`
 - [X] `"CEO at Pear Inc"`
 - [ ] the expression does not compile
 - [ ] the expression throws an exception at runtime
 
-# In the same code, what does the experession `pearCeo.title` evaluate to?
+# In the same code, what does the expression `pearCeo.title` evaluate to?
 
 - [ ] `"CEO"`
 - [ ] `"CEO at Pear Inc"`
 - [X] the expression does not compile
 - [ ] the expression throws an exception at runtime
 
-# And what does the experession `JobRole("Analyst", "Quince Inc").title` evaluate to?
+# And what does the expression `JobRole("Analyst", "Quince Inc").title` evaluate to?
 
 - [ ] `"Analyst"`
 - [ ] `"Analyst at Quince Inc"`

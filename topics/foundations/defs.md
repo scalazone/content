@@ -105,15 +105,14 @@ But there are subtle differences.
 
 ## Val vs Def
 
-The keyword `val` defines a new _value_: a field in a class, trait or object, or a local value within a method.
-This can be thought of as an allocation of some memory to store a value (either a primitive value, or a
-reference to an object) for as long as necessary. In the case of an object (or an object created from a class),
-that means until the object can no longer possibly be used, or in the case of a method, until the method
-completes and returns a value.
+The keyword `val` defines a new _value_: a field in a class, trait or object, or a local value within a method. This can
+be thought of as an allocation of some memory to store a value (either a primitive value, or a reference to an object)
+for as long as necessary. In the case of an object (or an object created from a class), that means until the object can
+no longer possibly be used, or in the case of a method, until the method completes and returns a value.
 
-Every time an identifier which refers to a `val` definition is evaluated, it will supply the value stored in
-memory. That operation will always be near-instaneous, because it just has to look up a value in memory which
-has already been calculated.
+Every time an identifier which refers to a `val` definition is evaluated, it will supply the value stored in memory.
+That operation will always be near-instantaneous, because it just has to look up a value in memory which has already
+been calculated.
 
 A definition using the `def` keyword will behave in exactly the same way if its implementation is just a simple
 expression, as in our earlier example,

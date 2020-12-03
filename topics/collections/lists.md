@@ -100,16 +100,16 @@ may have quite different performance characteristics for long sequences.
 
 ## Performance Comparison with Vectors
 
-In comparison, none of `Vector`s operations are proportional to the size of the collection, all being
-guaranteed to complete in fewer than a small, fixed number of operations. But accessing the first element of a
-`Vector` will require more operations than accessing the first element of a `List`, so it will be slower, as
-will constructing a new `Vector` by prepeding an element to the start of the `Vector`, simply because `List`s
-are structurally optimized for precisely these operations.
+In comparison, none of `Vector`s operations are proportional to the size of the collection, all being guaranteed to
+complete in fewer than a small, fixed number of operations. But accessing the first element of a
+`Vector` will require more operations than accessing the first element of a `List`, so it will be slower, as will
+constructing a new `Vector` by prepending an element to the start of the `Vector`, simply because `List`s are
+structurally optimized for precisely these operations.
 
-But the guarantee that `Vector` provides is very useful for understanding scalability of operations. The
-guarantee assures us that operations on `Vector`s will have more _predictable_ performance than those on
-`List`s as the number of elements we store within them grows, even if the performance of `Vector`s is
-notably worse for smaller-sized collections.
+But the guarantee that `Vector` provides is very useful for understanding scalability of operations. The guarantee
+assures us that operations on `Vector`s will have more _predictable_ performance than those on
+`List`s as the number of elements we store within them grows, even if the performance of `Vector`s is notably worse for
+smaller-sized collections.
 
 Often, the biggest challenge when learning Scala's collections is knowing the performance characteristics of
 their methods. This requires practice and experience, and even then the analysis can be difficult and
@@ -152,8 +152,8 @@ subsequent `+` operator as a subsequent addition to the set, and not as the iden
 
 An element can likewise be removed from a `Set` with the `-` operator.
 
-A useful operaton on `Set`s is their ability to test whether they contain a particular element or not. This can
-be done with the `contains` method, which returns `true` if the element exists in the `Set`, or `false`
+A useful operation on `Set`s is their ability to test whether they contain a particular element or not. This can be done
+with the `contains` method, which returns `true` if the element exists in the `Set`, or `false`
 otherwise.
 
 The test, for example,

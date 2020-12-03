@@ -18,20 +18,29 @@ val phoneNumbers = Map(
 )
 ```
 
-Just like with the table, keys are on the left side and point to the values on the right. If you want to access any of the elements in the `Map` you can do it in two ways. The first one is by calling the `get` method on a `Map` and it is considered to be a good pratice to do it that way. It returns an `Option` type that is `Some` containing the value if the key was found, and `None` if it was not found. Below you can see the example of this.
+Just like with the table, keys are on the left side and point to the values on the right. If you want to access any of
+the elements in the `Map` you can do it in two ways. The first one is by calling the `get` method on a `Map` and it is
+considered to be a good practice to do it that way. It returns an `Option` type that is `Some` containing the value if
+the key was found, and `None` if it was not found. Below you can see the example of this.
 
 ```scala
 val adamNumber = phoneNumbers.get("Adam") // equals to Some(...)
 val none = phoneNumbers.get("Pablo") // equals to None
 ```
 
-Another way of accessing Map's element is by calling the `Map` as you would call a function - and indirectly calling the `apply` method on it. The significant difference between this method and calling `get` method is that this method throws a `NoSuchElementException` when element can not be found. It is considered a bad pratice to call a method that throws an exception when there is an alternative that handles the problem in more convenient and meaningful way - in this case it is calling the `get` method and dealing with possilbility of receiving a `None` from it.
+Another way of accessing Map's element is by calling the `Map` as you would call a function - and indirectly calling
+the `apply` method on it. The significant difference between this method and calling `get` method is that this method
+throws a `NoSuchElementException` when element can not be found. It is considered a bad practice to call a method that
+throws an exception when there is an alternative that handles the problem in more convenient and meaningful way - in
+this case it is calling the `get` method and dealing with possibility of receiving a `None` from it.
 
-## Modyfing the Map
+## Modifying the Map
 
 ### Adding the elements
 
-To add a new key-value element to a Map you can use a `+` operator. As a side note - remember that immutability is the default behaviour of Scala collections and modyfing is in fact creating a new, modified `Map` and returning it. Syntax for adding a new elements to Map is straightforward as you can see in example below.
+To add a new key-value element to a Map you can use a `+` operator. As a side note - remember that immutability is the
+default behaviour of Scala collections and modifying is in fact creating a new, modified `Map` and returning it. Syntax
+for adding a new elements to Map is straightforward as you can see in example below.
 
 ```scala
 val updatedNumbers = phoneNumbers + ("John" -> "755 224 143)

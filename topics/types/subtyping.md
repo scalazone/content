@@ -108,13 +108,13 @@ Category Theory is a profound and interesting topic, but is beyond the scope of 
 provides good context for understanding these relationships, and the duality between properties and instances in
 the context of types.
 
-For an experienced Scala developer, thinking of types as first-class entities should be second nature, but it
-is nevertheless a complex topic, and sometimes we need to reason about types, and their relationships, more
-carefully. This is where thinking about types as sets of instances or sets of properties can be useful.
+For an experienced Scala developer, thinking of types as first-class entities should be second nature, but it is
+nevertheless a complex topic, and sometimes we need to reason about types, and their relationships, more carefully. This
+is where thinking about types as sets of instances or sets of properties can be useful.
 
-Understanding subtyping is crucial to understanding how Scala works. With pracitice, experience and familiarity,
-it can become very easy to reason about types and their relationships, and to harness the power it provides us
-to express specificity and generality in our code.
+Understanding subtyping is crucial to understanding how Scala works. With practice, experience and familiarity, it can
+become very easy to reason about types and their relationships, and to harness the power it provides us to express
+specificity and generality in our code.
 
 ?---?
 

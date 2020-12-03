@@ -40,7 +40,7 @@ A signature which meets those requirements is,
 ```scala
 def unapply(input: Double): Option[Int]
 ```
-and we can provide the full implemention in an `Integral` object like so:
+and we can provide the full implementation in an `Integral` object like so:
 ```scala
 object Integral:
   def unapply(input: String): Option[Int] =
@@ -108,16 +108,16 @@ object Even:
   def unapply(value: Int): Boolean = value%2 == 0
 ```
 
-The definition of an `unapply` method hints at a limitation for defining extractors: unlike a method application
-which can have multiple overloaded implementations, disambiguated by the number and type of its parameters, the
-input to an `unapply` method is always a single parameter (the scrutinee type) which is not selected on the
-basis of its return type, only by the _static_ type of the scrutinee. This means that it's not possible to
-define alternative extractors with different arities, and have the compiler choose a different one based on the
-number of parameters that appear in the pattern.
+The definition of an `unapply` method hints at a limitation for defining extractors: unlike a method application which
+can have multiple overloaded implementations, disambiguated by the number and type of its parameters, the input to
+an `unapply` method is always a single parameter (the scrutinee type) which is not selected on the basis of its return
+type, only by the _static_ type of the scrutinee. This means that it's not possible to define alternative extractors
+with different arities, and have the compiler choose a different one based on the number of parameters that appear in
+the pattern.
 
-But there is no restriction on defining multiple `unapply` methods for different scrutinee types. We could
-reasonably define the following extractor, which extracts hours and minutes from a time given in minutes,
-whereby giving the time as a `Double` will use an extractor which also extracs a number of seconds.
+But there is no restriction on defining multiple `unapply` methods for different scrutinee types. We could reasonably
+define the following extractor, which extracts hours and minutes from a time given in minutes, whereby giving the time
+as a `Double` will use an extractor which also extracts a number of seconds.
 ```scala
 object Time:
   def unapply(mins: Int): Option[(Int, Int)] =

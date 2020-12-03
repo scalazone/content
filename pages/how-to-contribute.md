@@ -142,7 +142,7 @@ To summarize, let's look on a sample lesson containing some mock content and two
 
 To add two numbers ...
 
-## Substraction
+## Subtraction
 
 ...
 

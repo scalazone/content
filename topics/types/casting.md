@@ -2,8 +2,8 @@ A type such as `List[String]` conforms to the type `Seq[String]`, and a value or
 `List[String]` may be used in any position that a `List[String]` or a `Seq[String]` or an `Iterable[String]` is
 expected. We might as well say that such a value _is_ a `List[String]` and _is_ a `Seq[String]` and _is_ an
 `Iterable[String]`, but at any given location in our code, a value can be proven to _be_ many different types,
-but will have a single _most precise_ type known to the compiler, from which its conformance to other more
-generaly types can be inferred by logical implication.
+but will have a single _most precise_ type known to the compiler, from which its conformance to other more generally
+types can be inferred by logical implication.
 
 If, at any point, we explicitly _ascribe_ a specific type to a value, that type will _become_ the single most
 precise type the compiler knows that it conforms to, and any subsequent usage of that value cannot assume the
@@ -25,17 +25,16 @@ general type that it already conforms to, it is called an _upcast_. This is alwa
 say, Scala will only permit an upcast to a type for which conformance can be proven, and doing so will never
 produce bytecode which would, under any circumstances, fail at runtime.
 
-In fact, the operation of upcasting does not change anything at _runtime_. That is because every reference type
-has a single _runtime type_ which is assigned to the reference when it is created, and is held (unchanged) for
-its entire lifetime. So while the static type of a value may be different as that reference is used in different
-contexts in the source code, its runtime type will not. That is because the runtime type of a value dictates
-fixed details about the value, such as the number of bytes it uses in heap memory, and the offsets of each of
-its fields within those bytes.
+In fact, the operation of upcasting does not change anything at _runtime_. That is because every reference type has a
+single _runtime type_ which is assigned to the reference when it is created, and is held (unchanged) for its entire
+lifetime. So while the static type of a value may be different as that reference is used in different contexts in the
+source code, its runtime type will not. That is because the runtime type of a value dictates fixed details about the
+value, such as the number of bytes it uses in heap memory, and the offsets of each of its fields within those bytes.
 
-There are other occasions when upcasting may happen. The types `IOException` and `RuntimeException` are both
-subtypes of the `Exception` type. If we had an instance of `IOException` and an instance of
-`ArithmeticException` and we put them both into a `Set`, the compiler would have a quandry to decide what type
-of `Set` it would be. It could not be a `Set[IOException]` if it contained an `ArithmeticException` because
+There are other occasions when upcasting may happen. The types `IOException` and `RuntimeException` are both subtypes of
+the `Exception` type. If we had an instance of `IOException` and an instance of
+`ArithmeticException` and we put them both into a `Set`, the compiler would have a quandary to decide what type of `Set`
+it would be. It could not be a `Set[IOException]` if it contained an `ArithmeticException` because
 `ArithmeticException` does not conform to `IOException`.
 
 By exactly the same reasoning, it could not be a `Set[ArithmeticException]`. But it _could_ be a `Set[Exception]`
@@ -72,20 +71,20 @@ and,
 Vector(1, 2, 3).include(0)
 ```
 
-On the right-hand side of each case clause, the `seq` value will be known to have the type which was matched in
-the pattern. That means that we can recover the functionality, or properties, of a `List[Int]` even if it has
-been lost, but we were forced to pattern match on the runtime value, and forced to consider the alternative case
-where our value did not match the specified type (or risk a `MatchError` being thrown).
+On the right-hand side of each case clause, the `seq` value will be known to have the type which was matched in the
+pattern. That means that we can recover the functionality, or properties, of a `List[Int]` even if it has been lost, but
+we were forced to pattern match on the runtime value, and forced to consider the alternative case where our value did
+not match the specified type (or risk a `MatchError` being thrown).
 
-But pattern matching provides a safe way of converting from one type to another. Occasionally, though, we will
-know with some certainty that a value has a particular more precise type, while the compiler is not able to make
-the same assertion. These occasions are rare: the Scala compiler has very broad capabilities for reperesenting
-the types of different values precisely, but they nevertheless occur.
+But pattern matching provides a safe way of converting from one type to another. Occasionally, though, we will know with
+some certainty that a value has a particular more precise type, while the compiler is not able to make the same
+assertion. These occasions are rare: the Scala compiler has very broad capabilities for representing the types of
+different values precisely, but they nevertheless occur.
 
-To further exacerbate the problem, pattern matching cannot always test the full static precision of a type from
-just its _runtime_ type. For example, a value may be known to be a `List[_]`, without it being possible to know
-if it is a `List[Int]` or and `List[String]`, at least, not without checking at least one of its elements, and
-that's not usually practical to do.
+To further exacerbate the problem, pattern matching cannot always test the full static precision of a type from just
+its _runtime_ type. For example, a value may be known to be a `List[_]`, without it being possible to know if it is
+a `List[Int]` or and `List[String]`, at least, not without checking at least one of its elements, and that's not usually
+practical to do.
 
 So there is a rare set of problems where the programmer can make stronger assertions about the types of values
 in our code than the compiler is able to prove, and stronger than we are able to test at runtime. In these

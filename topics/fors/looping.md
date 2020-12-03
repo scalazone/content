@@ -17,9 +17,15 @@ A couple of lessons ago we wrote code that does exactly the same operation, but 
 List(1, 2, 3).foreach(value => println(value))
 ```
 
-During the execution of the two code samples above, they both boil down to the same operations. This `for comprehension` is replaced with a single `foreach` call that looks exactly the same as the second code snippet. 
+During the execution of the two code samples above, they both boil down to the same operations. This `for comprehension`
+is replaced with a single `foreach` call that looks exactly the same as the second code snippet.
 
-Let's focus on the keywords that we used in this `for comprehension`. The first one that we haven't seen before is the `for` itself. It marks the beginng of the `for` expression and can be read as `For each`. Then, in the next line, there is a tabulated `i <- list` statement. It can be understood as `value "i" in the list`. Adding these two pieces together we end up with `For each value "i" in the list` - you must admit that at this point the meaning of this sentence is pretty clear. The last line says `do println(i)`. Now we can rewrite this whole expressing using the english language: `For each value "i" in the list do println "i"`. And it is exactly what it does on execution.
+Let's focus on the keywords that we used in this `for comprehension`. The first one that we haven't seen before is
+the `for` itself. It marks the beginning of the `for` expression and can be read as `For each`. Then, in the next line,
+there is a tabulated `i <- list` statement. It can be understood as `value "i" in the list`. Adding these two pieces
+together we end up with `For each value "i" in the list` - you must admit that at this point the meaning of this
+sentence is pretty clear. The last line says `do println(i)`. Now we can rewrite this whole expressing using the english
+language: `For each value "i" in the list do println "i"`. And it is exactly what it does on execution.
 
 ## Filtering
 
@@ -66,7 +72,9 @@ for
 do println(letter)
 ```
 
-This example is essentialy the same as the first example of `for comprehension` in this lesson. But that is not what we want to do. We want to combine the letters from `firstList` with the letters from `secondList`. To achieve this we do the following:
+This example is essentially the same as the first example of `for comprehension` in this lesson. But that is not what we
+want to do. We want to combine the letters from `firstList` with the letters from `secondList`. To achieve this we do
+the following:
 
 ```scala
 for
@@ -75,7 +83,11 @@ for
 do println(firstLetter.toString + secondLetter)
 ```
 
-All we had to do is just write one more line before the `do` expression. You can also notice that the arrows in the code are aligned - it is not required, but is often done to increase readability of the code. For each value in `firstList` it will go through all the elements in the `secondList`. This will, once again, execute in exactly the same way as the code using two `foreach` methods, but it is much more readable now. We can even do one more thing to make it look better. We can extract the combined letters to a seperate constant:
+All we had to do is just write one more line before the `do` expression. You can also notice that the arrows in the code
+are aligned - it is not required, but is often done to increase readability of the code. For each value in `firstList`
+it will go through all the elements in the `secondList`. This will, once again, execute in exactly the same way as the
+code using two `foreach` methods, but it is much more readable now. We can even do one more thing to make it look
+better. We can extract the combined letters to a separate constant:
 
 ```scala
 for
@@ -85,9 +97,13 @@ for
 do println(twoLetters)
 ```
 
-Using `=` instead of `<-` allows you to introduce a new constant. It works exactly like setting a new val, but it can be set inside a `for` expression, between the `arrow expressions`. It is often used to avoid duplicating pieces of code, or to extract parts of complicated expressions to seperate lines. 
+Using `=` instead of `<-` allows you to introduce a new constant. It works exactly like setting a new val, but it can be
+set inside a `for` expression, between the `arrow expressions`. It is often used to avoid duplicating pieces of code, or
+to extract parts of complicated expressions to separate lines.
 
-Now imagine a case where we want to use only the upper case letters from the `secondList`. If we used the `foreach` methods and then used a `filter` atop of them it would make a complete mess in the code! Instead, we just use the `if` exactly like we did it before:
+Now imagine a case where we want to use only the upper case letters from the `secondList`. If we used the `foreach`
+methods and then used a `filter` atop of them it would make a complete mess in the code! Instead, we just use the `if`
+exactly like we did it before:
 
 ```scala
 for

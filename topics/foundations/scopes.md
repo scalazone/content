@@ -50,10 +50,10 @@ and the `Server` object is imported. Every scope nested within the top-level sco
 The body of `Form` is a new scope, which has available all of the top-level scope. It introduces a value,
 `data`, a method, `complete` and an object, `Submit`.
 
-The object `Submit` further introduces a new scope, which inherits the definitions from `Form`'s scope directly,
-and tranisitively, `Server`. And also `Form` itself, from the top-level scope. Furthermore, the method `send()`
-is definied in this scope. The body of `send()` introduces another new scope, but it introduces no new symbols,
-and it may refer to symbols defined in any of the prior scopes we mentioned.
+The object `Submit` further introduces a new scope, which inherits the definitions from `Form`'s scope directly, and
+transitively, `Server`. And also `Form` itself, from the top-level scope. Furthermore, the method `send()`
+is defined in this scope. The body of `send()` introduces another new scope, but it introduces no new symbols, and it
+may refer to symbols defined in any of the prior scopes we mentioned.
 
 ## Shadowing
 

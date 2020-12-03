@@ -37,7 +37,7 @@ val rangedSeq = 1 to 5
 val rangedList = rangedSeq.toList
 ```
 
-It allows specyfing the `step` size exactly like the `ranged` method. You have to use the `by` method to achieve this:
+It allows specifying the `step` size exactly like the `ranged` method. You have to use the `by` method to achieve this:
 
 ```scala
 val rangedSeq = 1 to 9 by 2 // evaluates to [1, 3, 5, 7]
@@ -73,7 +73,13 @@ You can assume that methods for similar conversions are present on most of the c
 
 ## Iterating over the collections
 
-In computer programming the term `iteration` describes the process of repeating some given instruction or a set of instruction. Very often it refers to going over all the elements in a collection and performing an operation on each of them. You can think about it as accessing all the elements in the collection one by one and using each of them in your own defined operations. Scala defines mutiple of function to describe these `iterating` operations. The most basic of these functions is called `foreach` and receives a function as an argument. This function will be called on each element of the collection. It is often used for operations such as printing out all the values inside the `List` - the code below does exactly that.
+In computer programming the term `iteration` describes the process of repeating some given instruction or a set of
+instruction. Very often it refers to going over all the elements in a collection and performing an operation on each of
+them. You can think about it as accessing all the elements in the collection one by one and using each of them in your
+own defined operations. Scala defines multiple of function to describe these `iterating` operations. The most basic of
+these functions is called `foreach` and receives a function as an argument. This function will be called on each element
+of the collection. It is often used for operations such as printing out all the values inside the `List` - the code
+below does exactly that.
 
 ```scala
 List(1, 2, 3).foreach(value => println(value))
@@ -83,7 +89,14 @@ After executing this code you would see values `1`, `2`, and `3` appearing in su
 
 ### Mapping
 
-All of this gets much more interesting when you face a situation that requires you to alter contents of the collection. A method that is very similiar to `foreach`, but simultaneously modifies the values it iterates on, is called the `map`. It also requires passing a fuction that receives collection element as a argument, but also returns some value. This value is then stored in the place of the previous value - the one that was passed to the function as an argument. Consider the case when you need to add 1 to each element of the array. To do so you need to access each element, add one to it, and then store it in the place of the element that you operated on. In Scala it is as simple as executing the following code. Once again - remember that all these operations work on most of the Scala collections, including `Vector` and `Set`.
+All of this gets much more interesting when you face a situation that requires you to alter contents of the collection.
+A method that is very similar to `foreach`, but simultaneously modifies the values it iterates on, is called the `map`.
+It also requires passing a function that receives collection element as an argument, but also returns some value. This
+value is then stored in the place of the previous value - the one that was passed to the function as an argument.
+Consider the case when you need to add 1 to each element of the array. To do so you need to access each element, add one
+to it, and then store it in the place of the element that you operated on. In Scala it is as simple as executing the
+following code. Once again - remember that all these operations work on most of the Scala collections,
+including `Vector` and `Set`.
 
 ```scala
 val list = List(1, 2, 3, 4)
@@ -135,8 +148,18 @@ val list = 1 :: 2 :: 3 :: Nil
 val asString = list.foldRight("")(appendToString)
 ```
 
-Notice the inverted order of arguments in the `appendToString` function. It is meant to better represent the direction of folding. In this case `asString` has a value of `1 2 3 ` after performing the fold. The only difference is the location of the unwanted space - in this case it landed at the end of the String. You may be confused by the result, but think about it for one moment. `foldRight` method takes elements from the right and, as written in our `appendToString`, function puts them at the beggining of the accumulator on each step. Us inverting the order of values in the `appendToString` method was all that was required to keep the order of values in the resulting String correct.
+Notice the inverted order of arguments in the `appendToString` function. It is meant to better represent the direction
+of folding. In this case `asString` has a value of `1 2 3 ` after performing the fold. The only difference is the
+location of the unwanted space - in this case it landed at the end of the String. You may be confused by the result, but
+think about it for one moment. `foldRight` method takes elements from the right and, as written in our `appendToString`,
+function puts them at the beginning of the accumulator on each step. Us inverting the order of values in
+the `appendToString` method was all that was required to keep the order of values in the resulting String correct.
 
 ## Summary
 
-There is no point trying to remember all the methods defined on the collection types. In fact, even the most experienced Scala developers would struggle with listing all of them perfectly. However, it is very helpful to remember what operations Scala collections offer in general and to understand the concepts on which they operate. If you ever find yourself struggling to perform some operation that you can't get your head around, try going back to the basic operations that you learned about in this lesson. And do not hesistate scrolling through the offical Scala documentation on collections.
+There is no point trying to remember all the methods defined on the collection types. In fact, even the most experienced
+Scala developers would struggle with listing all of them perfectly. However, it is very helpful to remember what
+operations Scala collections offer in general and to understand the concepts on which they operate. If you ever find
+yourself struggling to perform some operation that you can't get your head around, try going back to the basic
+operations that you learned about in this lesson. And do not hesitate scrolling through the official Scala documentation
+on collections.

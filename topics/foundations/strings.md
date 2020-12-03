@@ -84,16 +84,16 @@ escaped. So to represent the string `\` we must write it twice, as `"\\"`. This 
 write certain strings, such as a path on Windows, for example, `C:\Program Files\`. This would need to be
 written in Scala code as, `"C:\\Program Files\\"`.
 
-Finally, although a single-quote character, `'`, can be written directly into any string, it may _optionally_ be
-escaped with a backslash, as `\'`. This is because, in addition to String literals, Scala also provides syntax
-for `Char` literals, and maintains consistency between their escaping rules. This syntax uses single-quotes
-instead of double-quotes, and obviously can accommodate only a single character.
+Finally, although a single-quote character, `'`, can be written directly into any string, it may _optionally_ be escaped
+with a backslash, as `\'`. This is because, in addition to String literals, Scala also provides syntax for `Char`
+literals, and maintains consistency between their escaping rules. This syntax uses single-quotes instead of
+double-quotes, and obviously can accommodate only a single character.
 
-Examples of `Char` literals are, `'a'`, `'\''`, `'"'`, `'\"'`, `'\b'`, `'π'` and `'\u03c0'`. Note that the
-double-quote in a charecter literal may be _optionally_ escaped, much like a single-quote in a string literal.
+Examples of `Char` literals are, `'a'`, `'\''`, `'"'`, `'\"'`, `'\b'`, `'π'` and `'\u03c0'`. Note that the double-quote
+in a character literal may be _optionally_ escaped, much like a single-quote in a string literal.
 
-Note that a one-character string literal, such as `"a"`, represents a different type of object to a character
-literal, such as `'a'`.
+Note that a one-character string literal, such as `"a"`, represents a different type of object to a character literal,
+such as `'a'`.
 
 ## Triple-quoted strings
 
@@ -139,13 +139,12 @@ removed from the resultant string.
 
 ## Immutability
 
-Strings in Scala are _immutable_. That means that a reference to a string will always point to exactly the same
-sequence of characters in memory. When we want to modify a string, we cannot simply mutate the characters in
-memory; we can only construct a new string, possibly deriving it from the original string, but leaving that
-original string unchanged.
+Strings in Scala are _immutable_. That means that a reference to a string will always point to exactly the same sequence
+of characters in memory. When we want to modify a string, we cannot simply mutate the characters in memory; we can only
+construct a new string, possibly deriving it from the original string, but leaving that original string unchanged.
 
-One of the most commonly-used operations on a string is its `+` operator, which will join one string to another.
-It's used in exactly the same way as additing two numbers together, and while it's an identical symbol with a
+One of the most commonly-used operations on a string is its `+` operator, which will join one string to another. It's
+used in exactly the same way as adding two numbers together, and while it's an identical symbol with a
 _similar_ purpose, it's a _different_ method.
 
 ```scala
@@ -177,11 +176,11 @@ identifier names will be read until reaching a character which could not be a va
 identifier name.
 
 That means that a substitution, `"$string"` would refer to the identifier `string`, even if an identifier called
-`str` were in scope, and `string` were not. Or conversely, when making a substitution, we must ensure that the
-character immediately following the identifier we want to use would be invalid as a continuation of the
-identifier name, for example, `.`, `,` or ` `.
+`str` were in scope, and `string` were not. Or conversely, when making a substitution, we must ensure that the character
+immediately following the identifier we want to use would be invalid as a continuation of the identifier name, for
+example, `.`, `,` or ` `.
 
-But when this isn't possible, we can use braces (`{` and `}`) to wrap the identifer, for example,
+But when this isn't possible, we can use braces (`{` and `}`) to wrap the identifier, for example,
 ```scala
 val thing = "character"
 s"There are three ${thing}s, $c1, $c2 and $c3."

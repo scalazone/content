@@ -1,4 +1,7 @@
-Some of the classes are general enough to be used with multiple types of values. Example of this could be the `List` class - it does not hold multiple different implementations for storing integers, Strings and other types. All that has to be done to make the `List` suit an arbitrary type is specyfing it with the parameter between the square brackets. This parameter is called a *type parameter* and the class that expects a type parametr is a *generic class*.
+Some of the classes are general enough to be used with multiple types of values. Example of this could be the `List`
+class - it does not hold multiple different implementations for storing integers, Strings and other types. All that has
+to be done to make the `List` suit an arbitrary type is specifying it with the parameter between the square brackets.
+This parameter is called a *type parameter* and the class that expects a type parametr is a *generic class*.
 
 ## Writing a generic class
 
