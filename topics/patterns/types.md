@@ -112,28 +112,33 @@ each one belongs to. We have also aligned the `=>`s vertically, and differently 
 just a stylistic choice to help readability.
 
 It is easy to reason about collection types such as `List[_]` so `Option[_]` in this way, but what about other
-parameterized types? In general, for generic types whose type parameter appears in the return types of its
-member methods, we can always match using wildcard types, and defer matching on their type parameter until
-we have an instance of that type to inspect. The cost of erasure is that pattern-matching code may be
-distributed widely throughout a program.
+parameterized types? In general, for generic types whose type parameter appears in the return types of its member
+methods, we can always match using wildcard types, and defer matching on their type parameter until we have an instance
+of that type to inspect. The cost of erasure is that pattern-matching code may be distributed widely throughout a
+program.
 
 ?---?
+
 # Which code correctly checks if `list` values are of a numeric type?
- - [ ] ```scala
- list.head match 
-   case None                => "Empty!"
-   case Some(x: Int | Long) => "Numeric"
-   case _                   => "Non-numeric"
+
+- [ ]
+```scala
+ list.head match
+case None => "Empty!"
+case Some(x: Int | Long) => "Numeric"
+case _ => "Non-numeric"
 ```
- - [ ] ```scala
- list.headOption match 
-   case None                => "Empty!"
-   case Some(x: Int | Long) => "Numeric"
-   case _                   => "Non-numeric"
+- [ ]
+```scala
+ list.headOption match
+case None => "Empty!"
+case Some(x: Int | Long) => "Numeric"
+case _ => "Non-numeric"
 ```
- - [X] ```scala
- list.headOption match 
-   case None                  => "Empty!"
-   case Some(x: (Int | Long)) => "Numeric"
-   case _                     => "Non-numeric"
+- [X]
+```scala
+ list.headOption match
+case None => "Empty!"
+case Some(x: (Int | Long)) => "Numeric"
+case _ => "Non-numeric"
 ```
