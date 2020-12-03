@@ -18,14 +18,12 @@ def test_lesson():
     try:
       lesson_text = Path(md).read_text()
       ast = commonmark.Parser().parse(lesson_text)
-      json_object = json.loads(commonmark.dumpJSON(ast))
-      predicate = lambda o: any(
-        map(lambda x: x["literal"] == QUESTION_SECTION_INDICATOR, filter(lambda x: x["type"] == "text", o["children"])))
-      indices = [i for i, v in enumerate(json_object) if predicate(v)]
-      if len(indices) > 1:
-        assert False, f"Multiple question section indicators ('?---?') found in file '{md}'"
-      elif len(indices) == 1:
-        question_section_content = json_object[indices[0] + 1:]
+      json_objects = json.loads(commonmark.dumpJSON(ast))
+
+      qsi_index = derive_question_section_indicator_index(md, json_objects)
+
+      if qsi_index:
+        question_section_content = json_objects[qsi_index + 1:]
         validate_question_section_content(md, question_section_content)
     except FileNotFoundError:
       assert False, f"Lesson file '{md}' not found"
@@ -33,11 +31,23 @@ def test_lesson():
       assert False, f"Lesson file '{md}' is malformed, cause: {repr(e)}"
 
 
+def derive_question_section_indicator_index(md, json_objects):
+  qsi_index = None
+  is_qsi = lambda x: x["literal"] == QUESTION_SECTION_INDICATOR
+  for i in range(len(json_objects)):
+    partial_sum = sum(map(lambda x: 1 if is_qsi(x) else 0, filter(is_text, json_objects[i]["children"])))
+    if partial_sum > 1 or (partial_sum == 1 and qsi_index):
+      assert False, f"Multiple question section indicators ('?---?') found in file '{md}'"
+    elif partial_sum == 1:
+      qsi_index = i
+  return qsi_index
+
+
 def validate_question_section_content(md, content_objects):
   content_objects = list(map(remove_code_blocks, content_objects))
   content_objects = remove_empty_paragraphs(content_objects)
   validate_question_indicators(md, content_objects)
-  question_answer_options_groups = derive_question_answer_options_groups(content_objects)
+  question_answer_options_groups = derive_question_answer_options_groups(md, content_objects)
   for group in question_answer_options_groups:
     validate_question_answers(md, map(lambda i: content_objects[i], group))
 
@@ -69,7 +79,7 @@ def validate_question_indicators(md, content_objects):
         assert False, f"Invalid question indication (multiple '#') in lesson file '{md}'"
 
 
-def derive_question_answer_options_groups(content_objects):
+def derive_question_answer_options_groups(md, content_objects):
   def is_item_node(object):
     return len([i for i, v in enumerate(object["children"]) if
                 "list_data" in v.keys() and v["list_data"]["type"] == "bullet"]) > 0
@@ -77,12 +87,7 @@ def derive_question_answer_options_groups(content_objects):
   def is_heading_node(object):
     return len([i for i, v in enumerate(object["children"]) if v["type"] == "heading"]) > 0
 
-  # most likely unnecessary
-  def contains_checkbox(object):
-    text = "".join(map(lambda x: x["literal"], filter(lambda x: x["type"] == "text", object["children"])))
-    return re.match(r"\[.]", text)
-
-  is_valid_item_node = lambda x: is_item_node(x) and contains_checkbox(x)
+  is_valid_item_node = lambda x: is_item_node(x)
   heading_indices = [i for i, v in enumerate(content_objects) if is_heading_node(v)]
   headings_len = len(heading_indices)
   answer_options_groups = []
@@ -90,6 +95,10 @@ def derive_question_answer_options_groups(content_objects):
     beg = heading_indices[i] + 1
     end = heading_indices[i + 1] if i + 1 < headings_len else len(content_objects)
     item_indices = [i + beg for i, v in enumerate(content_objects[beg:end]) if is_valid_item_node(v)]
+
+    if not item_indices:
+      assert False, f"Found a question without answer options in lesson file '{md}'"
+
     answer_options_groups.append(item_indices)
   return answer_options_groups
 
@@ -98,7 +107,7 @@ def validate_question_answers(md, question_contents):
   get_bullet_char = lambda x: \
     list(map(lambda x: x["list_data"]["bullet_char"], filter(lambda x: x["type"] in ["item", "list"], x)))[0]
   write_text = lambda x: (get_bullet_char(x["children"]),
-                          "".join(map(lambda x: x["literal"], filter(lambda x: x["type"] == "text", x["children"]))))
+                          "".join(map(lambda x: x["literal"], filter(is_text, x["children"]))))
   answer_options_texts = list(map(lambda x: " ".join(list(x)), map(write_text, question_contents)))
   single_answer_options = parse_single_answer_options(answer_options_texts)
   multi_answer_options = parse_multi_answer_options(answer_options_texts)
@@ -116,6 +125,10 @@ def validate_question_answers(md, question_contents):
 
   if multi_answer_options.all_count > 0 and multi_answer_options.checked_count == 0:
     assert False, f"No answer checked in the multi answer question found, file '{md}'"
+
+
+def is_text(x):
+  return x["type"] == "text"
 
 
 def parse_single_answer_options(answer_options_texts):
