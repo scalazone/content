@@ -1,12 +1,12 @@
 import glob
 import json
 import re
+from typing import Callable
 
 import commonmark
 from envs import CONTENT_PATH
 from pathlib import Path
 
-CODE_SNIPPET_INDICATOR = "```"
 QUESTION_SECTION_INDICATOR = "?---?"
 topics_root = CONTENT_PATH + "/topics"
 
@@ -31,7 +31,7 @@ def test_lesson():
       assert False, f"Lesson file '{md}' is malformed, cause: {repr(e)}"
 
 
-def derive_question_section_indicator_index(md, json_objects):
+def derive_question_section_indicator_index(md: str, json_objects: [dict]):
   qsi_index = None
   is_qsi = lambda x: x["literal"] == QUESTION_SECTION_INDICATOR
   for i in range(len(json_objects)):
@@ -43,7 +43,7 @@ def derive_question_section_indicator_index(md, json_objects):
   return qsi_index
 
 
-def validate_question_section_content(md, content_objects):
+def validate_question_section_content(md: str, content_objects: [dict]):
   content_objects = list(map(remove_code_blocks, content_objects))
   content_objects = remove_empty_paragraphs(content_objects)
   validate_question_indicators(md, content_objects)
@@ -52,12 +52,12 @@ def validate_question_section_content(md, content_objects):
     validate_question_answers(md, map(lambda i: content_objects[i], group))
 
 
-def remove_code_blocks(content_object):
+def remove_code_blocks(content_object: dict):
   is_not_code_block = lambda v: v["type"] != "code_block"
   return filter_object_recursively(content_object, is_not_code_block)
 
 
-def remove_empty_paragraphs(content_objects):
+def remove_empty_paragraphs(content_objects: [dict]):
   is_not_empty_node = lambda o: o["type"] != "paragraph" or (o["type"] == "paragraph" and o["children"])
   result = []
   for content_object in content_objects:
@@ -65,27 +65,27 @@ def remove_empty_paragraphs(content_objects):
   return [r for r in result if is_not_empty_node(r)]
 
 
-def filter_object_recursively(content_object, pred):
+def filter_object_recursively(content_object: dict, pred: Callable[[dict], bool]):
   if "children" in content_object.keys():
     proceeded_children = list(map(lambda x: filter_object_recursively(x, pred), content_object["children"]))
     content_object["children"] = [v for v in proceeded_children if pred(v)]
   return content_object
 
 
-def validate_question_indicators(md, content_objects):
+def validate_question_indicators(md: str, content_objects: [dict]):
   for content_object in content_objects:
     if content_object["type"] == "heading":
       if any(map(lambda x: x["type"] == "heading", content_object["children"])):
         assert False, f"Invalid question indication (multiple '#') in lesson file '{md}'"
 
 
-def derive_question_answer_options_groups(md, content_objects):
-  def is_item_node(object):
-    return len([i for i, v in enumerate(object["children"]) if
+def derive_question_answer_options_groups(md: str, content_objects: [dict]):
+  def is_item_node(obj: dict):
+    return len([i for i, v in enumerate(obj["children"]) if
                 "list_data" in v.keys() and v["list_data"]["type"] == "bullet"]) > 0
 
-  def is_heading_node(object):
-    return len([i for i, v in enumerate(object["children"]) if v["type"] == "heading"]) > 0
+  def is_heading_node(obj: dict):
+    return len([i for i, v in enumerate(obj["children"]) if v["type"] == "heading"]) > 0
 
   is_valid_item_node = lambda x: is_item_node(x)
   heading_indices = [i for i, v in enumerate(content_objects) if is_heading_node(v)]
@@ -103,7 +103,7 @@ def derive_question_answer_options_groups(md, content_objects):
   return answer_options_groups
 
 
-def validate_question_answers(md, question_contents):
+def validate_question_answers(md: str, question_contents: [dict]):
   get_bullet_char = lambda x: \
     list(map(lambda x: x["list_data"]["bullet_char"], filter(lambda x: x["type"] in ["item", "list"], x)))[0]
   write_text = lambda x: (get_bullet_char(x["children"]),
@@ -127,24 +127,24 @@ def validate_question_answers(md, question_contents):
     assert False, f"No answer checked in the multi answer question found, file '{md}'"
 
 
-def is_text(x):
-  return x["type"] == "text"
+def is_text(obj: dict):
+  return obj["type"] == "text"
 
 
-def parse_single_answer_options(answer_options_texts):
+def parse_single_answer_options(answer_options_texts: [str]):
   unchecked_options = list(filter(lambda x: re.match(r"^- \[ ]", x), answer_options_texts))
   checked_options = list(filter(lambda x: re.match(r"^- \[[xX]]", x), answer_options_texts))
-  return AnswerOptions(unchecked_options, checked_options)
+  return AnswerOptions(len(unchecked_options), len(checked_options))
 
 
-def parse_multi_answer_options(answer_options_texts):
+def parse_multi_answer_options(answer_options_texts: [str]):
   unchecked_options = list(filter(lambda x: re.match(r"^\* \[ ]", x), answer_options_texts))
   checked_options = list(filter(lambda x: re.match(r"^\* \[[xX]]", x), answer_options_texts))
-  return AnswerOptions(unchecked_options, checked_options)
+  return AnswerOptions(len(unchecked_options), len(checked_options))
 
 
 class AnswerOptions(object):
-  def __init__(self, unchecked, checked):
-    self.checked_count = len(checked)
-    self.unchecked_count = len(unchecked)
+  def __init__(self, unchecked_count: int, checked_count: int):
+    self.checked_count = checked_count
+    self.unchecked_count = unchecked_count
     self.all_count = self.unchecked_count + self.checked_count
