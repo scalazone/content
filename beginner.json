@@ -5,7 +5,7 @@
     {
       "topicId": "foundations",
       "lessonStart": "introduction",
-      "lessonEnd": "floatingpoint"
+      "lessonEnd": "primitives"
     },
     {
       "topicId": "concepts",
