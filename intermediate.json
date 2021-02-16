@@ -15,7 +15,7 @@
     {
       "topicId": "foundations",
       "lessonStart": "scopes",
-      "lessonEnd": "scopes"
+      "lessonEnd": "floatingpoint"
     },
     {
       "topicId": "templates",
