@@ -91,17 +91,18 @@ the `topics` directory. This `index.json` file has following JSON structure:
 
 The `Lesson` JSON type structure:
 
-| Field name      | Type                          | Description                                                                                 |
-|-----------------|-------------------------------|---------------------------------------------------------------------------------------------|
-| `id`            | String                        | Id of the lessons                                                                           |
-| `title`         | String                        | Title of the lesson; the name that is visible on the website                                |
-| `order`         | Int                           | Order number; allows organizing lessons                                                     |
-| `description`   | String                        | Description of the lesson (about 1-3 sentences); it is visible in the Google search results |
-| `authorIds`     | List of strings, Optional     | Ids of the lesson's authors                                                                 |
-| `video`         | Lesson video, Optional        | URL to an embeddable lesson video                                                           |
-| `duration`      | Int, Optional                 | Expected duration of lesson completion in minutes                                           |
-| `prerequisites` | List of `LessonPrerequisites` | Ids of lessons that are prerequisites of this lesson                                        |
-| `comingSoon`    | Boolean, Optional             | Marks lesson as coming soon; `false` by default                                             |
+| Field name      | Type                          | Description                                                                                                      |
+|-----------------|-------------------------------|------------------------------------------------------------------------------------------------------------------|
+| `id`            | String                        | Id of the lessons                                                                                                |
+| `title`         | String                        | Title of the lesson; the name that is visible on the website                                                     |
+| `order`         | Int                           | Order number; allows organizing lessons                                                                          |
+| `description`   | String                        | Description of the lesson (about 1-3 sentences); it is visible in the Google search results                      |
+| `authorIds`     | List of strings, Optional     | Ids of the lesson's authors                                                                                      |
+| `video`         | Lesson video, Optional        | URL to an embeddable lesson video                                                                                |
+| `duration`      | Int, Optional                 | Expected duration of lesson completion in minutes                                                                |
+| `prerequisites` | List of `LessonPrerequisites` | Ids of lessons that are prerequisites of this lesson                                                             |
+| `comingSoon`    | Boolean, Optional             | Marks lesson as coming soon; `false` by default; **NOTE: (possibly
+empty) {id}.md file is required in any case** |
 
 The `LessonPrerequisite` JSON type structure:
 
