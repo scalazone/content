@@ -5,23 +5,21 @@
     {
       "id": "static",
       "title": "Static vs Dynamic",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/eupgcKTO6AY",
+      "authorIds": [],
       "duration": 10
     },
     {
       "id": "floatingpoint",
       "title": "Floating-Point Numbers",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 16,
       "prerequisites": []
     },
     {
       "id": "hashing",
       "title": "Hashing",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 16,
-      "video": "https://www.youtube.com/embed/p1qh7HoXxOA",
       "prerequisites": [
         {
           "reason": "some of the examples in this lesson need an understanding of classes",
@@ -33,9 +31,8 @@
     {
       "id": "encodings",
       "title": "Character Encodings",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 25,
-      "video": "https://www.youtube.com/embed/hI3m7q6ZwnM",
       "prerequisites": [
         {
           "reason": "we first need to know how strings work in Scala",
@@ -47,7 +44,7 @@
     {
       "id": "recursion",
       "title": "Recursion",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 16,
       "prerequisites": [],
       "comingSoon": true
@@ -55,7 +52,7 @@
     {
       "id": "reftrans",
       "title": "Referential Transparency",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 12,
       "prerequisites": [],
       "comingSoon": true
@@ -63,7 +60,7 @@
     {
       "id": "binary",
       "title": "Binary",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 19,
       "prerequisites": [],
       "comingSoon": true
@@ -71,7 +68,7 @@
     {
       "id": "hex",
       "title": "Hexadecimal Numbers",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 14,
       "prerequisites": [],
       "comingSoon": true
@@ -79,7 +76,7 @@
     {
       "id": "tailrec",
       "title": "Tail Recursion",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 22,
       "prerequisites": [],
       "comingSoon": true
@@ -87,7 +84,7 @@
     {
       "id": "complexity",
       "title": "Computational Complexity",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 28,
       "prerequisites": [],
       "comingSoon": true

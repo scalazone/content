@@ -5,18 +5,16 @@
     {
       "id": "jvm",
       "title": "The JVM",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 12,
-      "video": "https://www.youtube.com/embed/6xe4bmJF-JM",
       "prerequisites": [
       ]
     },
     {
       "id": "memory",
       "title": "The Memory Model",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 14,
-      "video": "https://www.youtube.com/embed/kA4CtzUoCvU",
       "prerequisites": [
         {
           "reason": "Java's memory stores objects, so we need to understand them first",
@@ -28,9 +26,8 @@
     {
       "id": "stack",
       "title": "The Execution Stack",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 15,
-      "video": "https://www.youtube.com/embed/es68rZbORoc",
       "prerequisites": [
         {
           "reason": "the stack contains references to methods in classes, so we should understand classes first",
@@ -42,8 +39,7 @@
     {
       "id": "threads",
       "title": "Threads",
-      "video": "https://www.youtube.com/embed/0OYNrUtc_vA",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 15,
       "prerequisites": [
         {
@@ -56,7 +52,7 @@
     {
       "id": "erasure",
       "title": "Type Erasure",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 22,
       "prerequisites": [],
       "comingSoon": true
@@ -64,7 +60,7 @@
     {
       "id": "decompilation",
       "title": "Decompilation",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 22,
       "prerequisites": [],
       "comingSoon": true

@@ -5,54 +5,53 @@
     {
       "id": "underscore",
       "title": "The Underscore",
-      "authorIds": ["jon-pretty"],
-      "duration": 17,
-      "video": "https://www.youtube.com/embed/ZHKOhOp1HT8"
+      "authorIds": [],
+      "duration": 17
     },
     {
       "id": "whitespace",
       "title": "Meaningful Whitespace",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 17,
       "comingSoon": true
     },
     {
       "id": "keywords",
       "title": "Scala Keywords",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 16,
       "comingSoon": true
     },
     {
       "id": "blocks",
       "title": "Code blocks",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 12,
       "comingSoon": true
     },
     {
       "id": "sugar",
       "title": "Syntactic Sugar",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 18
     },
     {
       "id": "dynamic",
       "title": "Dynamic Objects",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 27
     },
     {
       "id": "sam",
       "title": "Single Abstract Method Types",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 15,
       "comingSoon": true
     },
     {
       "id": "parsing",
       "title": "Parsing",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 21,
       "comingSoon": true
     }

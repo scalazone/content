@@ -5,42 +5,40 @@
     {
       "id": "looping",
       "title": "Looping",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 10,
       "comingSoon": true
     },
     {
       "id": "options",
       "title": "Option, Try and Future",
-      "authorIds": ["jon-pretty"],
-      "duration": 28,
-      "video": "https://www.youtube.com/embed/uQI-LOj0f0s"
+      "authorIds": [],
+      "duration": 28
     },
     {
       "id": "monads",
       "title": "Monads",
-      "authorIds": ["jon-pretty"],
-      "duration": 22,
-      "video": "https://www.youtube.com/embed/6Izhl3C8ies"
+      "authorIds": [],
+      "duration": 22
     },
     {
       "id": "assignments",
       "title": "Assignments and Filters",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 9,
       "comingSoon": true
     },
     {
       "id": "transformation",
       "title": "Syntactic Transformation",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 14,
       "comingSoon": true
     },
     {
       "id": "laws",
       "title": "Monad Laws",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 10,
       "comingSoon": true
     }

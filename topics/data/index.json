@@ -5,42 +5,40 @@
     {
       "id": "enums",
       "title": "Simple Enumerations",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/byN3JmE9UoQ",
+      "authorIds": [],
       "duration": 16
     },
     {
       "id": "enums2",
       "title": "Parameterized Enumerations",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/To9-wC-F2GY",
+      "authorIds": [],
       "duration": 14
     },
     {
       "id": "caseclasses",
       "title": "Case Classes",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 14,
       "comingSoon": true
     },
     {
       "id": "sealedtraits",
       "title": "Sealed Traits",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 14,
       "comingSoon": true
     },
     {
       "id": "equality",
       "title": "Equality",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 18,
       "comingSoon": true
     },
     {
       "id": "stringcontext",
       "title": "String Contexts",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 18,
       "comingSoon": true
     }

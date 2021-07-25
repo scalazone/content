@@ -5,9 +5,8 @@
     {
       "id": "basics",
       "title": "Basics",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 20,
-      "video": "https://www.youtube.com/embed/X5KQUzoDujY",
       "prerequisites": [
         {
           "reason": "to understand collection classes, we should first understand classes",
@@ -19,41 +18,40 @@
     {
       "id": "lists",
       "title": "Lists and Sets",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/0_NrC9rK6Pg",
+      "authorIds": [],
       "duration": 17
     },
     {
       "id": "methods",
       "title": "Collection Methods",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 16,
       "comingSoon": true
     },
     {
       "id": "maps",
       "title": "Maps",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 16,
       "comingSoon": true
     },
     {
       "id": "mutable",
       "title": "Mutable Collections",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 19,
       "comingSoon": true
     },
     {
       "id": "lazylists",
       "title": "Lazy Lists",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 27
     },
     {
       "id": "streams",
       "title": "Streaming",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 21,
       "comingSoon": true
     }

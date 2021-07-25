@@ -5,9 +5,8 @@
     {
       "id": "simple",
       "title": "Simple matching",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 8,
-      "video": "https://www.youtube.com/embed/rhhkLMfyysA",
       "prerequisites": [
         {
           "reason": "pattern matches are composed of (and are themselves) expressions, so we should understand these first",
@@ -19,23 +18,20 @@
     {
       "id": "destructuring",
       "title": "Structural Matching",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/C-PI5HXlPTE",
+      "authorIds": [],
       "duration": 14
     },
     {
       "id": "syntax",
       "title": "Pattern Syntax",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/dnSr2Ky3JxY",
+      "authorIds": [],
       "duration": 15
     },
     {
       "id": "collections",
       "title": "Matching on Collections",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 12,
-      "video": "https://www.youtube.com/embed/Mobst4aunLk",
       "prerequisites": [
         {
           "reason": "it would be useful to know a few collections before we try to pattern match on them",
@@ -47,21 +43,20 @@
     {
       "id": "exhaustivity",
       "title": "Exhaustivity",
-      "authorIds": ["jon-pretty"],
-      "duration": 10,
-      "video": "https://www.youtube.com/embed/8t8CQNXgdXo"
+      "authorIds": [],
+      "duration": 10
     },
     {
       "id": "gadts",
       "title": "GADTs",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 25,
       "comingSoon": true
     },
     {
       "id": "matchtypes",
       "title": "Match Types",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 16,
       "comingSoon": true
     }

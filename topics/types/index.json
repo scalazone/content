@@ -5,8 +5,7 @@
     {
       "id": "basics",
       "title": "Basics",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/G2oyqW8VyqM",
+      "authorIds": [],
       "duration": 12,
       "prerequisites": [
         {
@@ -24,9 +23,8 @@
     {
       "id": "subtyping",
       "title": "Subtyping",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 12,
-      "video": "https://www.youtube.com/embed/wfTM_0sxqsA",
       "prerequisites": [
         {
           "reason": "subtyping requires a basic understanding of classes to provide context",
@@ -38,90 +36,86 @@
     {
       "id": "casting",
       "title": "Casting",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/Z_RUJ9ApUzI",
+      "authorIds": [],
       "duration": 14
     },
     {
       "id": "hierarchy",
       "title": "The Type Hierarchy",
-      "authorIds": ["jon-pretty"],
-      "duration": 14,
-      "video": "https://www.youtube.com/embed/AYvkAHqHEzk"
+      "authorIds": [],
+      "duration": 14
     },
     {
       "id": "generics",
       "title": "Generic Types",
-      "authorIds": ["jon-pretty"],
-      "duration": 13,
-      "video": "https://www.youtube.com/embed/rqovDkKmGP8"
+      "authorIds": [],
+      "duration": 13
     },
     {
       "id": "wildcards",
       "title": "Wildcard Types",
-      "authorIds": ["jon-pretty"],
-      "duration": 13,
-      "video": "https://www.youtube.com/embed/20RRooLvzRs"
+      "authorIds": [],
+      "duration": 13
     },
     {
       "id": "unions",
       "title": "Union types",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 22,
       "comingSoon": true
     },
     {
       "id": "intersections",
       "title": "Intersection types",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 19
     },
     {
       "id": "variance",
       "title": "Variance",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 21,
       "comingSoon": true
     },
     {
       "id": "projections",
       "title": "Projection types",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 11,
       "comingSoon": true
     },
     {
       "id": "contravariance",
       "title": "Contravariance",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 21,
       "comingSoon": true
     },
     {
       "id": "stability",
       "title": "Value Stability",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 15,
       "comingSoon": true
     },
     {
       "id": "singletons",
       "title": "Singleton Types",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 14,
       "comingSoon": true
     },
     {
       "id": "dependentmethods",
       "title": "Dependent Methods",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 19,
       "comingSoon": true
     },
     {
       "id": "polykinded",
       "title": "Kind Polymorphism",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 24
     }
   ]

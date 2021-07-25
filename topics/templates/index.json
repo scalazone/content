@@ -5,8 +5,7 @@
     {
       "id": "objects",
       "title": "Objects",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/72l8Kmwhlk4",
+      "authorIds": [],
       "duration": 11,
       "prerequisites": [
         {
@@ -24,16 +23,14 @@
     {
       "id": "classes",
       "title": "Classes",
-      "authorIds": ["jon-pretty"],
-      "duration": 12,
-      "video": "https://www.youtube.com/embed/LQtROAUWfYU"
+      "authorIds": [],
+      "duration": 12
     },
     {
       "id": "traits",
       "title": "Traits",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 20,
-      "video": "https://www.youtube.com/embed/hrT33GtAP_A",
       "prerequisites": [
         {
           "reason": "inheritance from traits requires an understanding of subtyping",
@@ -45,15 +42,14 @@
     {
       "id": "inheritance",
       "title": "Inheritance",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 11,
-      "video": "https://www.youtube.com/embed/5uAkpxI-GUk",
       "prerequisites": []
     },
     {
       "id": "overriding",
       "title": "Overriding",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 11,
       "prerequisites": [],
       "comingSoon": true
@@ -61,7 +57,7 @@
     {
       "id": "companions",
       "title": "Companion Objects",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 11,
       "prerequisites": [],
       "comingSoon": true
@@ -69,7 +65,7 @@
     {
       "id": "overloading",
       "title": "Overloading and Resolution",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 18,
       "prerequisites": [],
       "comingSoon": true
@@ -77,7 +73,7 @@
     {
       "id": "variances",
       "title": "Declaring Variance",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 13,
       "comingSoon": true,
       "prerequisites": [
@@ -91,7 +87,7 @@
     {
       "id": "selftypes",
       "title": "Self-types",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 13,
       "prerequisites": [],
       "comingSoon": true

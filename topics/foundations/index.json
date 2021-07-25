@@ -5,36 +5,32 @@
     {
       "id": "introduction",
       "title": "Introduction",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/FvYS8r9Nt18",
+      "authorIds": [],
       "duration": 9
     },
     {
       "id": "running",
       "title": "Installing and Running Scala",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 20,
       "comingSoon": true
     },
     {
       "id": "expressions",
       "title": "Expressions and Statements",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/fKCrvlBGbow",
+      "authorIds": [],
       "duration": 14
     },
     {
       "id": "helloworld",
       "title": "Our First Program",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/KOz_53LlAMI",
+      "authorIds": [],
       "duration": 12
     },
     {
       "id": "defs",
       "title": "Definitions",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/KLlAcPIUBKs",
+      "authorIds": [],
       "duration": 15,
       "prerequisites": [
         {
@@ -47,23 +43,21 @@
     {
       "id": "strings",
       "title": "Strings",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/DeG6wmkCou0",
+      "authorIds": [],
       "duration": 22,
       "prerequisites": []
     },
     {
       "id": "arithmetic",
       "title": "Arithmetic",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/nAV4Qd9glWY",
+      "authorIds": [],
       "duration": 15,
       "prerequisites": []
     },
     {
       "id": "functions",
       "title": "Functions",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 12,
       "prerequisites": [
         {
@@ -76,9 +70,8 @@
     {
       "id": "lambdas",
       "title": "Lambdas",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 18,
-      "video": "https://www.youtube.com/embed/IMeiRxmQJss",
       "prerequisites": [
         {
           "reason": "Some of the advanced topics in this lesson make reference to the JVM's memory model",
@@ -90,8 +83,7 @@
     {
       "id": "scopes",
       "title": "Scopes and Namespaces",
-      "authorIds": ["jon-pretty"],
-      "video": "https://www.youtube.com/embed/IOnttJYoj_4",
+      "authorIds": [],
       "duration": 9,
       "prerequisites": [
         {
@@ -104,7 +96,7 @@
     {
       "id": "primitives",
       "title": "Primitives",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 22,
       "prerequisites": [],
       "comingSoon": true
@@ -112,7 +104,7 @@
     {
       "id": "variables",
       "title": "Variables",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 15,
       "prerequisites": [],
       "comingSoon": true
@@ -120,7 +112,7 @@
     {
       "id": "varargs",
       "title": "Repeated Parameters",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 12,
       "prerequisites": [],
       "comingSoon": true
@@ -128,7 +120,7 @@
     {
       "id": "params",
       "title": "Named and Default Parameters",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 22,
       "prerequisites": [],
       "comingSoon": true
@@ -136,7 +128,7 @@
     {
       "id": "byname",
       "title": "By-name Parameters",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 12,
       "prerequisites": [],
       "comingSoon": true
@@ -144,7 +136,7 @@
     {
       "id": "tuples",
       "title": "Tuples",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 12,
       "prerequisites": [],
       "comingSoon": true
@@ -152,7 +144,7 @@
     {
       "id": "hlists",
       "title": "Heterogeneous Lists",
-      "authorIds": ["jon-pretty"],
+      "authorIds": [],
       "duration": 18,
       "prerequisites": [],
       "comingSoon": true
